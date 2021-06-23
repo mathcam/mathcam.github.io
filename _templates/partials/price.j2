@@ -1,0 +1,58 @@
+<style type="text/css">
+  .wrapper {
+    padding:4em;
+    padding-bottom: 0;
+  }
+
+  .currency-selector {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: .5rem;
+    border: 0;
+    background: transparent;
+    
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1024' height='640'><path d='M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z'></path></svg>") 90%/12px 6px no-repeat;
+    
+    font-family: inherit;
+    color: inherit;
+  }
+
+  .currency-amount {
+    text-align: right;
+  }
+
+  .currency-addon {
+    width: 6em;
+    text-align: left;
+    position: relative;
+  }
+</style>
+
+<div class="wrapper">
+  <form class="form-inline">
+    <label class="sr-only" for="inlineFormInputGroup">Amount</label>
+    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+      <div class="input-group-addon currency-symbol">€</div>
+      <input type="text" class="form-control currency-amount" id="inlineFormInputGroup" placeholder="25.00" size="8">
+      <div class="input-group-addon currency-addon">
+
+        <select class="currency-selector">
+          <option data-symbol="€" data-placeholder="25.00" selected>EUR</option>
+          <option data-symbol="$" data-placeholder="30.00">USD</option>
+          <option data-symbol="£" data-placeholder="22.00">GBP</option>
+          <option data-symbol="$" data-placeholder="35.00">CAD</option>
+          <option data-symbol="$" data-placeholder="40.00">AUD</option>
+          <option data-symbol=" " data-placeholder="35.00">CHF</option>
+        </select>
+
+      </div>
+    </div>
+  </form>
+</div>

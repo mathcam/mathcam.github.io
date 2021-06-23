@@ -1,0 +1,133 @@
+<div id="scrollTop">
+  <div class="d-flex align-items-center justify-content-end"><i class="fa fa-long-arrow-up"></i>{{ "En haut" if lang == 'fr' else "Top" }}</div>
+</div>
+
+<footer class="main-footer bg-gray">
+  <!-- Contact -->
+  <section id="contact-us">
+    <div class="container">
+      {% if lang == 'fr' %}
+        <h1 class="text-center text-uppercase font-weight-bold">1<sup>er</sup> cours gratuit et sans engagement !</h1>
+      {% else %}
+        <h1 class="text-center text-uppercase font-weight-bold">1<sup>st</sup> lesson free and without obligation!</h1>
+      {% endif %}
+      <p class="text-center">
+        {{ "... puis au tarif ci-dessous pour chaque période de cours. Une période dure 50 min avec jusqu'à 10 min offertes non garanties. Concernant les tarifs des cours en groupe, merci de me contacter." if lang == 'fr' else "... then at the price below for each lesson period. A period lasts 50 min with up to 10 min offered not guaranteed. Regarding the prices of group lessons, please contact me." }}
+      </p>
+      {% if all_curencies %}
+        <div class="d-flex justify-content-center">
+        {% include 'partials/price.j2' %}
+        </div>
+      {% else %}
+        <p class="font-weight-bold text-center">{{ "Tarif : 30.00 CHF / période" if lang == 'fr' else "Price: 30.00 CHF / period" }}</p>
+      {% endif %}
+      
+      <h2 class="text-center mt-5 mb-1">{{ "Contactez-moi !" if lang == 'fr' else "Contact me!" }}</h2>
+      <div class="col-12 px-auto text-center">
+        <ul class="contact-info list-unstyled">
+          <li class="d-block d-md-none" style="font-size: 33px;"><i class="fab fa-whatsapp"></i> <a class="text-primary" href="https://wa.me/message/M6SLEXQHDUSHI1">+41 79 965 53 06</a></li>
+          <li class="d-none d-md-block" style="font-size: 33px;"><i class="fab fa-whatsapp"></i> +41 79 965 53 06</li>
+          <li><i class="fas fa-clock"></i> 8h-22h, 7/7</li>
+          <!-- <li><i class="fa fa-envelope"></i> <a class="text-primary" href="mailto:info@mathcam.ch">info@mathcam.ch</a></li> -->
+        </ul>
+        <ul class="social-icons list-inline">
+          <li class="list-inline-item"><a href="https://maps.app.goo.gl/WUsiXCzBcSmHjmM19" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.facebook.com/mathcam.ch" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h3 class="text-center mb-3">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</h2>
+          <form id="contact-form" method="post" action="/contact-me">
+            <div class="messages"></div>
+            <div class="controls">
+              <div class="row">
+                <div class="col-md-12">
+                  <input type="text" name="customer" placeholder="{{ 'Votre nom *' if lang == 'fr' else "Your name *" }}" required="required" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" name="phone" placeholder="{{ 'Votre numéro de mobile *' if lang == 'fr' else 'Your mobile number *' }}" required="required" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <input type="email" name="email" placeholder="{{ 'Votre email *' if lang == 'fr' else "Your email *" }}" required="required" class="form-control">
+                </div>
+                <div class="col-md-12">
+                  <textarea name="message" placeholder="{{ "Éventuelles remarques (facultatif)" if lang == 'fr' else "Any remarks (optional)" }}" rows="3" class="form-control"></textarea>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" name="security" placeholder="Question anti-spam : êtes-vous un robot ?" required="required" class="form-control">
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit" class="btn btn-outline-primary">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <h5>{{ "À propos" if lang == "fr" else "About me" }}</h5>
+        <p>{{ "Enseignant en ligne indépendant, je propose des cours en ligne de maths, physique et chimie." if lang == "fr" else "Freelance online tutor offering lessons in math, physics and chemistry" }}</p>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <h5>{{ "Liens" if lang == "fr" else "Links" }}</h5>
+        <ul class="links list-unstyled">
+          <li> <a href="https://meet.jit.si/mathcam.ch" target="_blank">{{ "Visio-conférence" if lang == "fr" else "Videoconference" }}</a></li>
+          <li> <a href="https://link.mathcam.ch/tab" target="_blank">{{ "Tableau" if lang == "fr" else "Online whiteboard" }}</a></li>
+          <li> <a href="https://mathcam.setmore.com/" target="_blank">{{ "Réserver en ligne" if lang == "fr" else "Online booking" }}</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <h5>Matières</h5>
+        <ul class="links list-unstyled">
+          <li> <a href="cours-de-physique-niveau-gymnase">Cours de physique</a></li>
+          <li> <a href="cours-de-math-niveau-gymnase">Cours de maths</a></li>
+          <li> <a href="cours-de-math-chimie-niveau-gymnase">Cours de chimie</a></li>
+          <li> <a href="cours-de-math-niveau-gymnase">Cours d'appl. math.</a></li>
+        </ul>
+      </div>
+
+      <div class="d-none d-md-block col-lg-3"><a href="#" class="brand">Mathcam</a>
+        <ul class="contact-info list-unstyled">
+          <li><i class="fab fa-whatsapp"></i> +41 79 965 53 06</li>
+          <li><i class="fas fa-clock"></i> 8h-22h, 7/7</li>
+          <!-- <li><i class="fa fa-envelope"></i> <a class="text-primary" href="mailto:info@mathcam.ch">info@mathcam.ch</a></li> -->
+        </ul>
+        <p>Authmane Terki<br />
+        Allée du Tilleul 8<br />
+        1022 Chavannes-près-Renens<br />
+        Suisse</p>
+        <ul class="social-icons list-inline">
+          <li class="list-inline-item"><a href="https://maps.app.goo.gl/WUsiXCzBcSmHjmM19" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.facebook.com/mathcam.ch" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+          <li class="list-inline-item"><a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="assoc">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <p>2019-2021 Mathcam - {{ "Entreprise suisse dans l'enseignement à distance" if lang == "fr" else "Swiss company in distance learning" }} - <a href="https://github.com/authmane512/mathcam" target="_blank">{{ "Site web open-source" if lang == "fr" else "Open-source website" }}</a></p>
+        </div>
+        <div class="col-md-4 text-right">
+          <p>Design by <a href="https://bootstrapious.com/" target="_blank" class="external">Bootstrapious</a></p>
+        </div>
+      </div>
+      <div class="row d-none d-md-block text-center mt-5">
+        <!-- <a href="/start-lecture">Commencer un cours</a> -->
+      </div>
+    </div>
+  </div>
+</footer>

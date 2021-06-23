@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'partials/head.j2' %}
+    <title>Cours de maths/physique à distance, 1er gratuit sans engag.</title>
+    <meta name="description" content="Bonjour ! Je suis un enseignant en ligne suisse indépendant et propose des cours ou appuis en maths, physique et chimie niveau gymnase, collège et apprentissage, et spécialement pour l'OS maths-physique de 9-11ème Harmos en Suisse romande.">
+  </head>
+  <body>
+    {% include 'partials/header.j2' %}
+
+    {% set title = 'Cours de maths / physique à distance, 1er cours gratuit et sans engagement !' %}
+    {% set subtitle = 'Par tableau interactif et visio-conférence (par webcam / Skype / Zoom)' %}
+    {% include 'partials/picture.j2' %}
+
+
+    <!-- levels list -->
+    <section id="levels-list" class="">
+      <div class="container">
+        <h2 class="text-center text-uppercase mb-5 mt-3">Branches et Niveaux</h2>
+        <div class="row">
+          <div class="mx-auto d-none d-lg-block">
+            <div id="canton-selector" class="btn-group btn-group-toggle mb-2" data-toggle="buttons">
+              <label onclick="selectCanton('vaud');" class="btn btn-light border active">
+                <input type="radio" name="options" id="vaud-option" autocomplete="off" checked>
+                <span class="mx-auto">Vaud</span>
+              </label>
+              <label onclick="selectCanton('geneve');" class="btn btn-light border">
+                <input type="radio" name="options" id="geneve-option" autocomplete="off">
+                <span class="mx-auto">Genève</span>
+              </label>
+              <label onclick="selectCanton('fribourg');" class="btn btn-light border">
+                <input type="radio" name="options" id="fribourg-option" autocomplete="off">
+                <span class="mx-auto">Fribourg</span>
+              </label>
+              <label onclick="selectCanton('neuchatel');" class="btn btn-light border">
+                <input type="radio" name="options" id="neuchatel-option" autocomplete="off">
+                <span class="mx-auto">Neuchâtel</span>
+              </label>
+              <label onclick="selectCanton('valais');" class="btn btn-light border">
+                <input type="radio" name="options" id="valais-option" autocomplete="off">
+                <span class="mx-auto">Valais</span>
+              </label>
+              <label onclick="selectCanton('berne');" class="btn btn-light border">
+                <input type="radio" name="options" id="berne-option" autocomplete="off">
+                <span class="mx-auto">Berne</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="mx-auto dropdown d-block d-lg-none mb-2">
+            <button class="btn btn-light border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Canton</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <button onclick="selectCanton('vaud');" class="dropdown-item" type="button">Vaud</button>
+              <button onclick="selectCanton('geneve');" class="dropdown-item" type="button">Genève</button>
+              <button onclick="selectCanton('fribourg');" class="dropdown-item" type="button">Fribourg</button>
+              <button onclick="selectCanton('neuchatel');" class="dropdown-item" type="button">Neuchâtel</button>
+              <button onclick="selectCanton('valais');" class="dropdown-item" type="button">Valais</button>
+              <button onclick="selectCanton('berne');" class="dropdown-item" type="button">Berne</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="canton-schools vaud row">
+          <div class="col-12">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École secondaire</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École de maturité (Gymnase)</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École de culture générale (Gymnase)</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École de commerce (Gymnase) </li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Apprentissage</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Maturité professionnelle</li>
+            </ul>
+            <p class="text-secondary text-center">Vaud</p>
+          </div>
+        </div>
+        <div class="canton-schools geneve row">
+          <div class="col-12">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Cycle d'orientation</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Collège</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École supérieure de commerce</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Centre de formation professionnelle</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École de culture générale</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Apprentissage</li>
+            </ul>
+            <p class="text-secondary text-center">Genève</p>
+          </div>
+        </div>
+        <div class="canton-schools fribourg row">
+          <div class="col-12">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Cycle d'orientation</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Collège / Gymnase</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École supérieure de commerce</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École de culture générale</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Apprentissage</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Maturité professionnelle</li>
+            </ul>
+            <p class="text-secondary text-center">Fribourg</p>
+          </div>
+        </div>
+        <div class="canton-schools neuchatel row">
+          <div class="col-12">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École secondaire</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Lycée</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École supérieure de commerce</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École de degré diplôme</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Apprentissage</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Maturité professionnelle</li>
+            </ul>
+            <p class="text-secondary text-center">Neuchâtel</p>
+          </div>
+        </div>
+        <div class="canton-schools valais row">
+          <div class="col-12">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Cycle d'orientation</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Collège</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École supérieure de commerce</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École de culture générale</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Apprentissage</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Maturité professionnelle</li>
+            </ul>
+            <p class="text-secondary text-center">Valais</p>
+          </div>
+        </div>
+        <div class="canton-schools berne row">
+          <div class="col-12">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École secondaire</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Gymnase</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École supérieure de commerce</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École de maturité professionnelle</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> École de maturité spécialisée</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Apprentissage</li>
+            </ul>
+            <p class="text-secondary text-center">Berne</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center mx-auto" style="max-width: 500px;">
+            <h6><i class="fas fa-check-circle text-success"></i> Physique (ou Maths-Physique)</h6>
+            <p>Mécanique, Forces, Énergie, Travail, Cinématique (mouvements), Électricité, Magnétisme, Calorimétrie (chaleur), Optique, Lentilles, Ondes, etc</p>
+
+            <h6><i class="fas fa-check-circle text-success"></i> Maths</h6>
+            <p>Algèbre, Équations, Fonctions, Géométrie, Trigonométrie, Vecteurs, Combinatoires, Probabilités, Analyse, Ensembles, Suites, Limites, etc</p>
+
+            <h6><i class="fas fa-check-circle text-success"></i> Chimie</h6>
+            <p>Atomes, Stœchiométrie (équations chimiques), Tableau périodique, Liaisons chimiques, Acides et bases, Nomenclature, etc</p>
+
+            <!-- <ul class="list-group mx-auto">
+              <li class="list-group-item"> Mathématiques</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Math-Physique</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Physique</li>
+              <li class="list-group-item"><i class="fas fa-check-circle text-warning"></i> Chimie</li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% include 'partials/advantages.j2' %}
+
+    <!-- about me -->
+    <section id="about-us" class="about-us bg-gray">
+      <div class="container">
+        <h2 class="text-center text-uppercase">Qui suis-je</h2>
+        <div class="row">
+          <p class="lead text-justify col-lg-9">Bonjour ! Je suis Authmane Terki, né à Morges, je vis actuellement dans la région de Lausanne. Enseignant et répétiteur en ligne indépendant, <a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" target="_blank">ex développeur</a>, fondateur de Mathcam entreprise suisse dans l'enseignement à distance, je propose des cours ou appuis en maths, physique et chimie pour les élèves de fin de secondaire et de gymnase, les apprentis et les adultes en formation, et spécialement pour le programme de l'OS maths-physique de 9-11ème Harmos que je maîtrise jusqu'aux plus petits détails.<br /><br />Après plusieurs années d'expérience, j'ai pu réunir de multiples astuces, techniques et ressources très précieuses, d'anciens examens et des exercices inédits.<br /><br />La satisfaction des nombreux élèves que j'ai soutenus - dont une bonne partie qui ont réussi avec succès leur examen - alimente mon intérêt pour l'enseignement, tandis que je me passionne pour les maths et la physique depuis mon plus jeune âge et <a href="/attestations.html" class="d-inline">me suis qualifié à 3 reprises à la finale suisse du Championnat International des Jeux Mathématiques et Logiques.</a></p>
+          <figure class="figure col-lg-3 my-auto">
+            <img class="rounded figure-img d-block mx-auto" style="height: 250px; width: 250px;" src="img/me2021_cropped_compressed.jpeg">
+            <figcaption class="figure-caption d-block text-center">Authmane Terki</figcaption>
+          </figure>
+        </div><!-- <a href="mon-parcours" class="btn btn-primary btn-shadow btn-gradient">Mon parcours</a> -->
+      </div>
+    </section>
+
+    {% include 'partials/testimonials.j2' %}
+
+    <!-- books gallery -->
+    <section class="">
+      <div class="container">
+        <h2 class="text-center text-uppercase mb-5">Manuels de référence</h2>
+        <div id="books-gallery" class="owl-carousel">
+          <div class="item"><img src="img/books/Maths_11_LE.jpg" alt="Mathématiques 9-10-11 Livre 11e CIIP LEP"></div>
+          <div class="item"><img src="img/books/eureka-11S.jpeg" alt="Eureka 11S Livre option spécifique mathématiques et physique"></div>
+          <div class="item"><img src="img/books/physique-chimie-1.jpg" alt="Physique-Chimie Volume 1 Livre Editions LEP"></div>
+          <div class="item"><img src="img/books/physique-1.jpg" alt="Physique 1 Livre Chenelière Education René Lafrance"></div>
+          <div class="item"><img src="img/books/chimie-avancee-prepa-bac.jpg" alt="Chimie avancée préparation au BAC et à la maturité Livre"></div>
+          <div class="item"><img src="img/books/formulaire-orange.jpg" alt="Formulaire et Tables Livre CRM"></div>
+          <div class="item"><img src="img/books/hubert-bovet-algebre.jpg" alt="Hubert Bovet Algèbre Livre"></div>
+          <div class="item"><img src="img/books/Maths_9-10-11_Aide-memoire.jpg" alt="Mathématiques 9-10-11 Livre Aide-mémoire CIIP LEP"></div>
+          <div class="item"><img src="img/books/algebre_lineaire.jpg" alt="Algèbre Linéaire Livre CRM"></div>
+          <div class="item"><img src="img/books/eureka-10S.jpg" alt="Eureka 10S option spécifique mathématiques et physique"></div>
+          <div class="item"><img src="img/books/physique-chimie-2.jpg" alt="Physique-Chimie Volume 2 Livre Editions LEP"></div>
+          <div class="item"><img src="img/books/physique-2.jpg" alt="Physique 2 Livre Chenelière Education René Lafrance"></div>
+          <div class="item"><img src="img/books/chimie-prepa-bac.jpg" alt="Chimie préparation au BAC et à la maturité Livre"></div>
+          <div class="item"><img src="img/books/hubert-bovet-analyse.jpg" alt="Hubert Bovet Analyse Livre"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- payment methods -->
+    <section>
+      <h2 class="text-center text-uppercase mb-5">Modes de paiement acceptés</h2>
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <figure class="figure col-2">
+            <img class="img-fluid figure-img d-block mx-auto" src="img/payment/twint.png">
+            <figcaption class="figure-caption d-none d-md-block text-center">Twint</figcaption>
+          </figure>
+          <figure class="figure col-2">
+            <img class="img-fluid figure-img d-block mx-auto" src="img/payment/paypal.png">
+            <figcaption class="figure-caption d-none d-md-block text-center">PayPal</figcaption>
+          </figure>
+          <figure class="figure col-2">
+            <img class="img-fluid figure-img d-block mx-auto" src="img/payment/mastercard2.jpg">
+            <figcaption class="figure-caption d-none d-md-block text-center">Mastercard</figcaption>
+          </figure>
+          <figure class="figure col-2">
+            <img class="img-fluid figure-img d-block mx-auto" src="img/payment/visa.png">
+            <figcaption class="figure-caption d-none d-md-block text-center">Visa</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    {% set all_curencies = False %}
+    {% include 'partials/footer.j2' %}
+    {% include 'partials/js_scripts.j2' %}
+
+    <script>
+      RSAlert('danger', '<span class="h4 text-uppercase">1er cours gratuit et sans engagement !</span>', 120);
+    </script>
+  </body>
+</html>
