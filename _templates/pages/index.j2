@@ -6,6 +6,8 @@
     <meta name="description" content="Bonjour ! Je suis un enseignant en ligne indépendant et propose des cours en maths, physique-chimie et SNT/NSI (informatique) pour les élèves de fin de collège et de lycée, les apprentis et les adultes en formation.">
   </head>
   <body>
+    {% set lang = 'fr' %}
+
     {% include 'partials/header.j2' %}
 
     {% set title = 'Cours de maths / physique-chimie à distance, 1er cours gratuit et sans engagement !' %}
@@ -52,6 +54,8 @@
       </div>
     </section>
 
+    {% include 'partials/working.j2' %}
+
     {% include 'partials/advantages.j2' %}
 
     <!-- about me -->
@@ -94,23 +98,6 @@
     {% set all_curencies = True %}
     {% include 'partials/footer.j2' %}
     {% include 'partials/js_scripts.j2' %}
-
-    <script>
-      function updateSymbol(e){
-        var selected = $(".currency-selector option:selected");
-        $(".currency-symbol").text(selected.data("symbol"))
-        $(".currency-amount").prop("placeholder", selected.data("placeholder"))
-        $('.currency-addon-fixed').text(selected.text())
-      }
-
-      $(".currency-selector").on("change", updateSymbol)
-
-      updateSymbol()
-    </script>
-
-    <script>
-      RSAlert('danger', '<span class="h4 text-uppercase">1er cours gratuit et sans engagement !</span>', 120);
-    </script>
   </body>
 </html>
  

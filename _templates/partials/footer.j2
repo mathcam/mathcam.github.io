@@ -19,45 +19,54 @@
         {% include 'partials/price.j2' %}
         </div>
       {% else %}
-        <p class="font-weight-bold text-center">{{ "Tarif : 30.00 CHF / période" if lang == 'fr' else "Price: 30.00 CHF / period" }}</p>
+        <p class="font-weight-bold text-center">{{ "Tarif : 35.00 CHF / période" if lang == 'fr' else "Price: 35.00 CHF / period" }}</p>
       {% endif %}
       
-      <h2 class="text-center mt-5 mb-1">{{ "Contactez-moi !" if lang == 'fr' else "Contact me!" }}</h2>
+      <h2 class="text-center mt-5 mb-2">{{ "Contactez-moi !" if lang == 'fr' else "Contact me!" }}</h2>
       <div class="col-12 px-auto text-center">
         <ul class="contact-info list-unstyled">
-          <li class="d-block d-md-none" style="font-size: 33px;"><i class="fab fa-whatsapp"></i> <a class="text-primary" href="https://wa.me/message/M6SLEXQHDUSHI1">+41 79 965 53 06</a></li>
-          <li class="d-none d-md-block" style="font-size: 33px;"><i class="fab fa-whatsapp"></i> +41 79 965 53 06</li>
+          <li><i class="fas fa-phone-alt"></i> <a class="text-primary" href="tel:+41799655306">+41 79 965 53 06</a></li>
           <li><i class="fas fa-clock"></i> 8h-22h, 7/7</li>
           <!-- <li><i class="fa fa-envelope"></i> <a class="text-primary" href="mailto:info@mathcam.ch">info@mathcam.ch</a></li> -->
         </ul>
-        <ul class="social-icons list-inline">
+        <!-- <ul class="social-icons list-inline">
           <li class="list-inline-item"><a href="https://maps.app.goo.gl/WUsiXCzBcSmHjmM19" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
           <li class="list-inline-item"><a href="https://www.facebook.com/mathcam.ch" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
           <li class="list-inline-item"><a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-        </ul>
+        </ul> -->
+        <div class="row mb-5">
+          <div class="col-lg-4 px-1 mb-1">
+            <a class="btn btn-primary" href="https://m.me/mathcam.ch" target="_blank" style="background-color: #0078FF; border-color: #0078FF;"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> Discuter sur Messenger</a>
+          </div>
+
+          <div class="col-lg-4 px-1 mb-1">
+            <a class="btn btn-primary" href="https://wa.me/message/M6SLEXQHDUSHI1" target="_blank" style="background-color: #25d366; border-color: #25d366;"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuter sur Whatsapp</a>
+          </div>
+
+          <div class="col-lg-4 px-1 mb-1">
+            <a class="btn btn-primary" href="https://t.me/mathcam2019" target="_blank" style="background-color: #0088cc; border-color: #0088cc;"><i class="fab fa-telegram" aria-hidden="true"></i> Discuter sur Telegram</a>
+          </div>
+        </div>
       </div>
 
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h3 class="text-center mb-3">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</h2>
-          <form id="contact-form" method="post" action="/contact-me">
+          <form id="contact-form" method="post" action="https://formspree.io/f/mnqlzqpn">
             <div class="messages"></div>
             <div class="controls">
               <div class="row">
                 <div class="col-md-12">
-                  <input type="text" name="customer" placeholder="{{ 'Votre nom *' if lang == 'fr' else "Your name *" }}" required="required" class="form-control">
+                  <input type="text" name="customer" placeholder="{{ 'Votre nom *' if lang == 'fr' else 'Your name *' }}" required="required" class="form-control">
                 </div>
                 <div class="col-md-6">
                   <input type="tel" name="phone" placeholder="{{ 'Votre numéro de mobile *' if lang == 'fr' else 'Your mobile number *' }}" required="required" class="form-control">
                 </div>
                 <div class="col-md-6">
-                  <input type="email" name="email" placeholder="{{ 'Votre email *' if lang == 'fr' else "Your email *" }}" required="required" class="form-control">
+                  <input type="email" name="email" placeholder="{{ 'Votre email *' if lang == 'fr' else 'Your email *' }}" required="required" class="form-control">
                 </div>
                 <div class="col-md-12">
-                  <textarea name="message" placeholder="{{ "Éventuelles remarques (facultatif)" if lang == 'fr' else "Any remarks (optional)" }}" rows="3" class="form-control"></textarea>
-                </div>
-                <div class="col-md-12">
-                  <input type="text" name="security" placeholder="Question anti-spam : êtes-vous un robot ?" required="required" class="form-control">
+                  <textarea name="message" placeholder="{{ 'Éventuelles remarques (facultatif)' if lang == 'fr' else 'Any remarks (optional)' }}" rows="3" class="form-control"></textarea>
                 </div>
                 <div class="col-md-12 text-center">
                   <button type="submit" class="btn btn-outline-primary">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</button>

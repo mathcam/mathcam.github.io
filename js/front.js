@@ -1,39 +1,4 @@
 // ------------------------------------------------------- //
-// Testimonials Slider
-// ------------------------------------------------------ //
-$('#testimonials-slider').owlCarousel({
-    loop: true,
-    margin: 10,
-    dots: false,
-    nav: true,
-    smartSpeed: 700,
-    autoplay:true,
-    autoplayTimeout:2000,
-    autoplayHoverPause:true,
-    navText: [
-        "<i class='fa fa-angle-left'></i>",
-        "<i class='fa fa-angle-right'></i>"
-    ],
-    responsiveClass: true,
-    responsive: {
-        0: {
-            items: 1,
-            nav: false,
-            dots: true
-        },
-        768: {
-            items: 2,
-            nav: true
-        },
-        1200: {
-            items: 3,
-            nav: true,
-        }
-    }
-});
-
-
-// ------------------------------------------------------- //
 // Scroll Top Button
 // ------------------------------------------------------- //
 $('#scrollTop').on('click', function () {
@@ -91,35 +56,6 @@ $('.navbar .navbar-toggler').on('click', function () {
     $(this).toggleClass('active');
 });
 
-$("#books-gallery").owlCarousel({
-    loop:true,
-    autoplay: true,
-    autoplayTimeout: 1500,
-    items: 4
-});
-
-
-// ------------------------------------------------------- //
-// contact form
-// ------------------------------------------------------- //
-var contact_form = $('#contact-form');
-$(contact_form).submit(function(event) {
-  event.preventDefault();
-  var formData = $(contact_form).serialize();
-  $.ajax({
-    type: 'POST',
-    url: $(contact_form).attr('action'),
-    data: formData,
-    success: function(data) {
-      console.log("ok!!", data);
-      alertify.success("Bien reçu ! Je vous réponderai au plus vite.")
-      // $('input[name=email]').val('');
-      // $('input[name=phone]').val('');
-      // $('textarea[name=message]').val('');
-    }
-  });
-});
-
 // ------------------------------------------------------- //
 // canton selector
 // ------------------------------------------------------- //
@@ -132,3 +68,17 @@ function selectCanton(canton) {
     });
 }
 selectCanton('vaud');
+
+// ------------------------------------------------------- //
+// currency selector
+// ------------------------------------------------------- //
+function updateSymbol(e){
+  var selected = $(".currency-selector option:selected");
+  $(".currency-symbol").text(selected.data("symbol"))
+  $(".currency-amount").prop("placeholder", selected.data("placeholder"))
+  $('.currency-addon-fixed').text(selected.text())
+}
+
+$(".currency-selector").on("change", updateSymbol)
+
+updateSymbol()

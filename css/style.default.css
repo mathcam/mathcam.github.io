@@ -270,7 +270,7 @@ section header {
   display: block;
   padding-left: 10px;
   color: #656565;
-  font-family: "Open Sans", sans-serif;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 #signupform input {
@@ -287,7 +287,7 @@ section header {
 }
 
 #signupform input::-moz-placeholder {
-  font-family: "Open Sans", sans-serif;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-weight: 300;
   color: #aaa;
   font-style: italic;
@@ -295,7 +295,7 @@ section header {
 }
 
 #signupform input::-webkit-input-placeholder {
-  font-family: "Open Sans", sans-serif;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-weight: 300;
   color: #aaa;
   font-style: italic;
@@ -303,7 +303,7 @@ section header {
 }
 
 #signupform input:-ms-input-placeholder {
-  font-family: "Open Sans", sans-serif;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-weight: 300;
   color: #aaa;
   font-style: italic;
@@ -593,6 +593,7 @@ section.testimonials .item {
   margin-right: 0;
   padding: 70px 50px;
   padding-left: 70px;
+  /*height: 500px;*/
 }
 
 section.testimonials .item p {
@@ -666,21 +667,21 @@ section.newsletter .form-group input {
   background: none;
   outline: none;
   padding: 0 30px;
-  font-family: "Open Sans", sans-serif;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 section.newsletter .form-group input::-moz-placeholder {
-  font-family: "Open Sans", sans-serif;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-weight: 300;
 }
 
 section.newsletter .form-group input::-webkit-input-placeholder {
-  font-family: "Open Sans", sans-serif;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-weight: 300;
 }
 
 section.newsletter .form-group input:-ms-input-placeholder {
-  font-family: "Open Sans", sans-serif;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-weight: 300;
 }
 
@@ -1514,7 +1515,7 @@ STYLE SWITCHER FOR DEMO
  * 3. TYPE
  */
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
@@ -1545,8 +1546,7 @@ h6,
 .h5,
 .h6 {
   margin-bottom: 0.5rem;
-  font-family: inherit;
-  font-weight: 800;
+  font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";ht: 800;
   line-height: 1.1;
   color: #2e324a;
 }
@@ -1883,4 +1883,44 @@ a.text-light:focus, a.text-light:hover {
 
 a.text-dark:focus, a.text-dark:hover {
   color: #1d2124 !important;
+}
+
+/*
+* ==========================================================
+*     CURRENCY SELECTOR
+* ==========================================================
+*/
+.wrapper {
+  padding:4em;
+  padding-bottom: 0;
+}
+
+.currency-selector {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: .5rem;
+  border: 0;
+  background: transparent;
+  
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1024' height='640'><path d='M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z'></path></svg>") 90%/12px 6px no-repeat;
+  
+  font-family: inherit;
+  color: inherit;
+}
+
+.currency-amount {
+  text-align: right;
+}
+
+.currency-addon {
+  width: 6em;
+  text-align: left;
+  position: relative;
 }

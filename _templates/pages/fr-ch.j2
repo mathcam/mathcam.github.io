@@ -6,6 +6,8 @@
     <meta name="description" content="Bonjour ! Je suis un enseignant en ligne suisse indépendant et propose des cours ou appuis en maths, physique et chimie niveau gymnase, collège et apprentissage, et spécialement pour l'OS maths-physique de 9-11ème Harmos en Suisse romande.">
   </head>
   <body>
+    {% set lang = 'fr' %}
+
     {% include 'partials/header.j2' %}
 
     {% set title = 'Cours de maths / physique à distance, 1er cours gratuit et sans engagement !' %}
@@ -161,6 +163,8 @@
       </div>
     </section>
 
+    {% include 'partials/working.j2' %}
+
     {% include 'partials/advantages.j2' %}
 
     <!-- about me -->
@@ -210,6 +214,10 @@
           <figure class="figure col-2">
             <img class="img-fluid figure-img d-block mx-auto" src="img/payment/twint.png">
             <figcaption class="figure-caption d-none d-md-block text-center">Twint</figcaption>
+          </figure>
+          <figure class="figure col-2">
+            <img class="img-fluid figure-img d-block mx-auto" src="img/payment/bill.jpg">
+            <figcaption class="figure-caption d-none d-md-block text-center">Facture (ou QR-facture)</figcaption>
           </figure>
           <figure class="figure col-2">
             <img class="img-fluid figure-img d-block mx-auto" src="img/payment/paypal.png">

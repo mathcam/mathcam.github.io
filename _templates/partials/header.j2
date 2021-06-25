@@ -17,6 +17,18 @@
       <div class="navbar-text">   
         <a href="#contact-us" class="btn btn-primary navbar-btn btn-shadow btn-gradient link-scroll">M'appeler</a>
       </div>
+
+      <div class="dropdown">
+        <button class="btn btn-outline-primary dropdown-toggle ml-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ "Langue" if lang == "fr" else "Language" }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/">Français</a>
+          <a class="dropdown-item" href="en.html">English</a>
+          <a class="dropdown-item" href="fr-ch.html">Français (CH)</a>
+          <a class="dropdown-item" href="en-ch.html">English (CH)</a>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
