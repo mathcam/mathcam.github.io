@@ -28,17 +28,17 @@
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto align-items-start align-items-lg-center">
-          {% if index %}
-          <li class="nav-item"><a href="#levels-list" class="nav-link link-scroll">{{ "Branches et niveaux" if lang == "fr" else "Subjects and levels" }}</a></li>
-          <li class="nav-item"><a href="#about-us" class="nav-link link-scroll">{{ "Qui suis-je" if lang == "fr" else "About me" }}</a></li>
-          <li class="nav-item"><a href="#testimonials" class="nav-link link-scroll">{{ "Témoignages" if lang == "fr" else "Testimonials" }}</a></li>
+          {% if home %}
+            <li class="nav-item"><a href="#levels-list" class="nav-link link-scroll">{{ "Branches et niveaux" if lang == "fr" else "Subjects and levels" }}</a></li>
+            <li class="nav-item"><a href="#about-us" class="nav-link link-scroll">{{ "Qui suis-je" if lang == "fr" else "About me" }}</a></li>
+            <li class="nav-item"><a href="#testimonials" class="nav-link link-scroll">{{ "Témoignages" if lang == "fr" else "Testimonials" }}</a></li>
           {% endif %}
           <li class="nav-item"><a href="#contact-us" class="nav-link link-scroll">Contact</a></li>
           <!-- <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
           <li class="nav-item"><a href="/faq" class="nav-link">FAQ</a></li> -->
       </ul>
 
-      {% if index %}
+      {% if home %}
         <div class="dropdown">
           <button class="btn btn-outline-primary dropdown-toggle ml-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ "Langue" if lang == "fr" else "Language" }}

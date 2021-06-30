@@ -8,4 +8,9 @@ Les technologies suivantes ont été utilisées :
 - Jinja2
 - Python3
 
+Voilà comment générer le site :
+
+    pip3 install jinja2 css-html-js-minify
+    python3 _generator.py
+
 Enjoy ! 😉

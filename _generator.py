@@ -1,4 +1,5 @@
 from jinja2 import Environment, FileSystemLoader
+from css_html_js_minify import process_single_js_file, process_single_css_file, html_minify
 
 from testimonials import testimonials
 
@@ -11,9 +12,11 @@ SPP = "https://www.superprof.ch/cours-distance-physique-enseignant-independant-f
 
 def make_pg(page):
   template = env.get_template(f'pages/{page}.j2')
-  with open(page + '.html', 'w') as file:
-    html = template.render(testimonials=testimonials, GPAGE=GPAGE, SPM=SPM, SPP=SPP, available=available)
+  html = template.render(testimonials=testimonials, GPAGE=GPAGE, SPM=SPM, SPP=SPP, available=available)
+  with open(page + '.html.tmp', 'w') as file:
     file.write(html)
+  with open(page + '.html', 'w') as file:
+    file.write(html_minify(html))
 
 make_pg('index')
 make_pg('en')
@@ -22,8 +25,11 @@ make_pg('en-ch')
 
 template = env.get_template(f'pages/attestations.j2')
 with open('attestations-fr.html', 'w') as file:
-  html = template.render(GPAGE=GPAGE, available=available, lang='fr')
+  html = html_minify(template.render(GPAGE=GPAGE, available=available, lang='fr'))
   file.write(html)
 with open('attestations-en.html', 'w') as file:
-  html = template.render(GPAGE=GPAGE, available=available, lang='en')
+  html = html_minify(template.render(GPAGE=GPAGE, available=available, lang='en'))
   file.write(html)
+
+process_single_js_file('js/front.js', overwrite=False)
+process_single_css_file('css/style.css', overwrite=False)

@@ -1,7 +1,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="all,follow">
+{% if noindex %}
+  <meta name="robots" content="noindex, nofollow">
+{% else %}
+  <meta name="robots" content="all,follow">
+{% endif %}
 <!-- Bootstrap CSS-->
 <!-- <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,12 +17,12 @@
 <!-- Custom Font Icons CSS-->
 <!-- <link rel="stylesheet" href="css/landy-iconfont.css"> -->
 <!-- theme stylesheet-->
-<link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+<link rel="stylesheet" href="css/style.min.css" id="theme-stylesheet">
 <!-- Favicon-->
 <link rel="shortcut icon" href="favicon.svg">
 
 <!-- href -->
-<link rel="alternate" href="https://mathcam.github.io/" hreflang="fr" />
+<link rel="alternate" href="https://mathcam.github.io" hreflang="fr" />
 <link rel="alternate" href="https://mathcam.github.io/en.html" hreflang="en" />
 <link rel="alternate" href="https://mathcam.github.io/fr-ch.html" hreflang="fr-ch" />
 <link rel="alternate" href="https://mathcam.github.io/en-ch.html" hreflang="en-ch" />
