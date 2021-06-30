@@ -1,0 +1,29 @@
+<section>
+  <div class="container">
+    <h2 class="text-center text-uppercase mb-5">{{ "Modes de paiement acceptés" if lang == "fr" else "Payment methods accepted" }}</h2>
+    <div class="row justify-content-center">
+      {% if inter %}
+        <figure class="figure col-4 col-sm-3 col-md-2">
+          <img class="img-fluid figure-img d-block mx-auto" src="img/payment/twint.png">
+          <figcaption class="figure-caption d-none d-md-block text-center">Twint</figcaption>
+        </figure>
+        <figure class="figure col-4 col-sm-3 col-md-2">
+          <img class="img-fluid figure-img d-block mx-auto" src="img/payment/invoice.png">
+          <figcaption class="figure-caption text-center">{{ "Facture (ou QR-facture)" if lang == "fr" else "Bill (or QR-bill)" }}</figcaption>
+        </figure>
+      {% endif %}
+      <figure class="figure col-4 col-sm-3 col-md-2">
+        <img class="img-fluid figure-img d-block mx-auto" src="img/payment/paypal.png">
+        <figcaption class="figure-caption d-none d-md-block text-center">PayPal</figcaption>
+      </figure>
+      <figure class="figure col-4 col-sm-3 col-md-2">
+        <img class="img-fluid figure-img d-block mx-auto" src="img/payment/mastercard2.jpg">
+        <figcaption class="figure-caption d-none d-md-block text-center">Mastercard</figcaption>
+      </figure>
+      <figure class="figure col-4 col-sm-3 col-md-2">
+        <img class="img-fluid figure-img d-block mx-auto" src="img/payment/visa2.png">
+        <figcaption class="figure-caption d-none d-md-block text-center">Visa</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>

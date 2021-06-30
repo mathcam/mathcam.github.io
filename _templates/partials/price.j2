@@ -1,21 +1,15 @@
-<div class="wrapper">
-  <form class="form-inline">
-    <label class="sr-only" for="inlineFormInputGroup">Amount</label>
-    <div class="btn-group mb-2 mr-sm-2 mb-sm-0">
-      <div class="btn btn-outline-primary currency-symbol">€</div>
-      <input type="text" class="form-control currency-amount" id="inlineFormInputGroup" placeholder="25.00" size="8">
-      <div class="btn btn-outline-primary currency-addon">
+{% for currency, price in [('EUR', '25.00'), ('USD', '30.00'), ('GBP', '22.00'), ('CAD', '35.00'), ('AUD', '40.00'), ('CHF', '35.00')] %}
+  <p class="price-text {{ currency.lower() }} font-weight-bold text-center">{{ "Tarif : {} {} / période".format(price, currency) if lang == 'fr' else "Price: {} {} / period".format(price, currency) }}</p>
+{% endfor %}
 
-        <select class="currency-selector">
-          <option data-symbol="€" data-placeholder="25.00" selected>EUR</option>
-          <option data-symbol="$" data-placeholder="30.00">USD</option>
-          <option data-symbol="£" data-placeholder="22.00">GBP</option>
-          <option data-symbol="$" data-placeholder="35.00">CAD</option>
-          <option data-symbol="$" data-placeholder="40.00">AUD</option>
-          <option data-symbol=" " data-placeholder="35.00">CHF</option>
-        </select>
-
-      </div>
-    </div>
-  </form>
+<div class="text-center dropdown mb-2">
+  <button class="btn btn-light border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Currency</button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <button onclick="selectCurrency('eur');" class="dropdown-item" type="button">EUR</button>
+    <button onclick="selectCurrency('usd');" class="dropdown-item" type="button">USD</button>
+    <button onclick="selectCurrency('gbp');" class="dropdown-item" type="button">GBP</button>
+    <button onclick="selectCurrency('cad');" class="dropdown-item" type="button">CAD</button>
+    <button onclick="selectCurrency('aud');" class="dropdown-item" type="button">AUD</button>
+    <button onclick="selectCurrency('chf');" class="dropdown-item" type="button">CHF</button>
+  </div>
 </div>

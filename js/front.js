@@ -61,24 +61,50 @@ $('.navbar .navbar-toggler').on('click', function () {
 // ------------------------------------------------------- //
 var cantons_list = ['vaud', 'geneve', 'fribourg', 'neuchatel', 'valais', 'berne'];
 function selectCanton(canton) {
-    console.log(canton);
     cantons_list.filter(function(x) { return x !== canton }).forEach(function(element) {
-        $("." + canton + ".canton-schools").removeClass('d-none');
         $("." + element + ".canton-schools").addClass('d-none');
     });
+    $("." + canton + ".canton-schools").removeClass('d-none');
 }
 selectCanton('vaud');
 
 // ------------------------------------------------------- //
 // currency selector
 // ------------------------------------------------------- //
-function updateSymbol(e){
-  var selected = $(".currency-selector option:selected");
-  $(".currency-symbol").text(selected.data("symbol"))
-  $(".currency-amount").prop("placeholder", selected.data("placeholder"))
-  $('.currency-addon-fixed').text(selected.text())
+var currencies_list = ['eur', 'usd', 'gbp', 'cad', 'aud', 'chf'];
+function selectCurrency(currency) {
+    currencies_list.filter(function(x) { return x !== currency }).forEach(function(element) {
+        $("." + element + ".price-text").addClass('d-none');
+    });
+    $("." + currency + ".price-text").removeClass('d-none');
+    $('#dropdownMenuButton').text(currency.toUpperCase())
 }
+selectCurrency('eur');
+// function updateSymbol(e){
+//   var selected = $(".currency-selector option:selected");
+//   $(".currency-symbol").text(selected.data("symbol"))
+//   $(".currency-amount").prop("placeholder", selected.data("placeholder"))
+//   $('.currency-addon-fixed').text(selected.text())
+// }
 
-$(".currency-selector").on("change", updateSymbol)
+// $(".currency-selector").on("change", updateSymbol)
 
-updateSymbol()
+// updateSymbol()
+
+// ------------------------------------------------------- //
+// video
+// ------------------------------------------------------- //
+var video_wrapper = $('.youtube-video-place');
+
+//  Check to see if youtube wrapper exists
+if(video_wrapper.length){
+    let addVideo = function(){
+        video_wrapper.html('<div class="embed-responsive embed-responsive-16by9"><iframe id="mathcam-video" allowfullscreen class="embed-responsive-item" src="' + video_wrapper.data('yt-url') + '"></iframe></div>');
+        $("#mathcam-video")[0].src += "?autoplay=1&mute=1";
+    };
+    if (window.matchMedia("(max-width: 575px)").matches) {
+        $('.play-youtube-video').on('click', addVideo);
+    } else {
+        addVideo();
+    }
+}

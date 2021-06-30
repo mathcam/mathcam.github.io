@@ -83,7 +83,7 @@ testimonials = [
   'source': 'spm'},
   {'msg': "Super prof. Pour la première séance, ma fille a bien aimé sa façon de travailler. Méthodique, avec une grande capacité à transmettre l’information et bien expliquer les exercices difficiles .",
   'avatar': 'female.png',
-  'name': "Hanen mère de Alaa",
+  'name': "Mère de Alaa",
   'info': "9ème Harmos",
   'source': 'spm'},
   {'msg': "Sujets maîtrisés et explications claires, très sympathique. révisions efficaces pour la préparation aux examens",

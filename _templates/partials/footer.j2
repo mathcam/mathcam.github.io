@@ -7,26 +7,29 @@
   <section id="contact-us">
     <div class="container">
       {% if lang == 'fr' %}
-        <h1 class="text-center text-uppercase font-weight-bold">1<sup>er</sup> cours gratuit et sans engagement !</h1>
+        <h2 class="text-center text-uppercase font-weight-bold">1<sup>er</sup> cours gratuit et sans engagement !</h1>
       {% else %}
-        <h1 class="text-center text-uppercase font-weight-bold">1<sup>st</sup> lesson free and without obligation!</h1>
+        <h2 class="text-center text-uppercase font-weight-bold">1<sup>st</sup> lesson free and without obligation!</h1>
       {% endif %}
       <p class="text-center">
         {{ "... puis au tarif ci-dessous pour chaque période de cours. Une période dure 50 min avec jusqu'à 10 min offertes non garanties. Concernant les tarifs des cours en groupe, merci de me contacter." if lang == 'fr' else "... then at the price below for each lesson period. A period lasts 50 min with up to 10 min offered not guaranteed. Regarding the prices of group lessons, please contact me." }}
       </p>
-      {% if all_curencies %}
-        <div class="d-flex justify-content-center">
+
+      {% if inter %}
         {% include 'partials/price.j2' %}
-        </div>
       {% else %}
         <p class="font-weight-bold text-center">{{ "Tarif : 35.00 CHF / période" if lang == 'fr' else "Price: 35.00 CHF / period" }}</p>
       {% endif %}
       
+      {% if available %}
       <h2 class="text-center mt-5 mb-2">{{ "Contactez-moi !" if lang == 'fr' else "Contact me!" }}</h2>
+      {% endif %}
       <div class="col-12 px-auto text-center">
         <ul class="contact-info list-unstyled">
+          {% if available %}
           <li><i class="fas fa-phone-alt"></i> <a class="text-primary" href="tel:+41799655306">+41 79 965 53 06</a></li>
           <li><i class="fas fa-clock"></i> 8h-22h, 7/7</li>
+          {% endif %}
           <!-- <li><i class="fa fa-envelope"></i> <a class="text-primary" href="mailto:info@mathcam.ch">info@mathcam.ch</a></li> -->
         </ul>
         <!-- <ul class="social-icons list-inline">
@@ -34,24 +37,30 @@
           <li class="list-inline-item"><a href="https://www.facebook.com/mathcam.ch" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
           <li class="list-inline-item"><a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
         </ul> -->
-        <div class="row mb-5">
-          <div class="col-lg-4 px-1 mb-1">
-            <a class="btn btn-primary" href="https://m.me/mathcam.ch" target="_blank" style="background-color: #0078FF; border-color: #0078FF;"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> Discuter sur Messenger</a>
-          </div>
+        {% if available %}
+          <div class="row mb-5">
+            <div class="col-lg-4 px-1 mb-1">
+              <a class="btn btn-primary" href="https://m.me/mathcam.ch" target="_blank" style="background-color: #0078FF; border-color: #0078FF;"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> Discuter sur Messenger</a>
+            </div>
 
-          <div class="col-lg-4 px-1 mb-1">
-            <a class="btn btn-primary" href="https://wa.me/message/M6SLEXQHDUSHI1" target="_blank" style="background-color: #25d366; border-color: #25d366;"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuter sur Whatsapp</a>
-          </div>
+            <div class="col-lg-4 px-1 mb-1">
+              <a class="btn btn-primary" href="https://wa.me/message/M6SLEXQHDUSHI1" target="_blank" style="background-color: #25d366; border-color: #25d366;"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuter sur Whatsapp</a>
+            </div>
 
-          <div class="col-lg-4 px-1 mb-1">
-            <a class="btn btn-primary" href="https://t.me/mathcam2019" target="_blank" style="background-color: #0088cc; border-color: #0088cc;"><i class="fab fa-telegram" aria-hidden="true"></i> Discuter sur Telegram</a>
+            <div class="col-lg-4 px-1 mb-1">
+              <a class="btn btn-primary" href="https://t.me/mathcam2019" target="_blank" style="background-color: #0088cc; border-color: #0088cc;"><i class="fab fa-telegram" aria-hidden="true"></i> Discuter sur Telegram</a>
+            </div>
           </div>
-        </div>
+        {% endif %}
       </div>
 
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h3 class="text-center mb-3">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</h2>
+          {% if available %}
+            <h3 class="text-center mb-3">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</h2>
+          {% else %}
+            <h3 class="text-center mb-3">{{ "Être notifié de mon retour" if lang == "fr" else "Be notified when I'm back" }}</h2>
+          {% endif %}
           <form id="contact-form" method="post" action="https://formspree.io/f/mnqlzqpn">
             <div class="messages"></div>
             <div class="controls">
@@ -59,17 +68,24 @@
                 <div class="col-md-12">
                   <input type="text" name="customer" placeholder="{{ 'Votre nom *' if lang == 'fr' else 'Your name *' }}" required="required" class="form-control">
                 </div>
-                <div class="col-md-6">
-                  <input type="tel" name="phone" placeholder="{{ 'Votre numéro de mobile *' if lang == 'fr' else 'Your mobile number *' }}" required="required" class="form-control">
+                <div class="col-md-12">
+                  <div class="input-group mb-3">
+                    {% include 'partials/phone_codes.j2' %}
+                    <input type="tel" name="phone" placeholder="{{ 'Votre numéro de mobile *' if lang == 'fr' else 'Your mobile number *' }}" required="required" class="form-control">
+                  </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <input type="email" name="email" placeholder="{{ 'Votre email *' if lang == 'fr' else 'Your email *' }}" required="required" class="form-control">
                 </div>
                 <div class="col-md-12">
                   <textarea name="message" placeholder="{{ 'Éventuelles remarques (facultatif)' if lang == 'fr' else 'Any remarks (optional)' }}" rows="3" class="form-control"></textarea>
                 </div>
                 <div class="col-md-12 text-center">
-                  <button type="submit" class="btn btn-outline-primary">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</button>
+                  {% if available %}
+                    <button type="submit" class="btn btn-outline-primary">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</button>
+                  {% else %}
+                    <button type="submit" class="btn btn-outline-primary">{{ "Être notifié" if lang == "fr" else "Be notified" }}</button>
+                  {% endif %}
                 </div>
               </div>
             </div>
@@ -90,7 +106,7 @@
         <h5>{{ "Liens" if lang == "fr" else "Links" }}</h5>
         <ul class="links list-unstyled">
           <li> <a href="https://meet.jit.si/mathcam.ch" target="_blank">{{ "Visio-conférence" if lang == "fr" else "Videoconference" }}</a></li>
-          <li> <a href="https://link.mathcam.ch/tab" target="_blank">{{ "Tableau" if lang == "fr" else "Online whiteboard" }}</a></li>
+          <li> <a href="https://cutt.ly/Bmah0k9" target="_blank">{{ "Tableau" if lang == "fr" else "Online whiteboard" }}</a></li>
           <li> <a href="https://mathcam.setmore.com/" target="_blank">{{ "Réserver en ligne" if lang == "fr" else "Online booking" }}</a></li>
         </ul>
       </div>
@@ -98,16 +114,18 @@
       <div class="col-lg-3 col-md-6">
         <h5>Matières</h5>
         <ul class="links list-unstyled">
-          <li> <a href="cours-de-physique-niveau-gymnase">Cours de physique</a></li>
-          <li> <a href="cours-de-math-niveau-gymnase">Cours de maths</a></li>
-          <li> <a href="cours-de-math-chimie-niveau-gymnase">Cours de chimie</a></li>
-          <li> <a href="cours-de-math-niveau-gymnase">Cours d'appl. math.</a></li>
+          <li> <a href="/">Cours à distance</a></li>
+          <li> <a href="en.html">Online tutoring</a></li>
+          <li> <a href="fr-ch.html">Cours à distance (CH)</a></li>
+          <li> <a href="en-ch.html">Online tutoring (CH)</a></li>
         </ul>
       </div>
 
-      <div class="d-none d-md-block col-lg-3"><a href="#" class="brand">Mathcam</a>
-        <ul class="contact-info list-unstyled">
-          <li><i class="fab fa-whatsapp"></i> +41 79 965 53 06</li>
+      <div class="col-lg-3"><a href="#" class="brand">Mathcam</a>
+        <ul class="d-none d-md-block contact-info list-unstyled">
+          {% if available %}
+          <li><i class="fas fa-phone-alt"></i> <a class="text-primary" href="tel:+41799655306">+41 79 965 53 06</a></li>
+          {% endif %}
           <li><i class="fas fa-clock"></i> 8h-22h, 7/7</li>
           <!-- <li><i class="fa fa-envelope"></i> <a class="text-primary" href="mailto:info@mathcam.ch">info@mathcam.ch</a></li> -->
         </ul>
@@ -116,7 +134,7 @@
         1022 Chavannes-près-Renens<br />
         Suisse</p>
         <ul class="social-icons list-inline">
-          <li class="list-inline-item"><a href="https://maps.app.goo.gl/WUsiXCzBcSmHjmM19" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
+          <li class="list-inline-item"><a href="{{ GPAGE }}" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
           <li class="list-inline-item"><a href="https://www.facebook.com/mathcam.ch" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
           <li class="list-inline-item"><a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
         </ul>
@@ -128,15 +146,21 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <p>2019-2021 Mathcam - {{ "Entreprise suisse dans l'enseignement à distance" if lang == "fr" else "Swiss company in distance learning" }} - <a href="https://github.com/authmane512/mathcam" target="_blank">{{ "Site web open-source" if lang == "fr" else "Open-source website" }}</a></p>
+          <p>2019-2021 Mathcam - {{ "Entreprise suisse dans l'enseignement à distance" if lang == "fr" else "Swiss company in distance learning" }}</p>
         </div>
         <div class="col-md-4 text-right">
-          <p>Design by <a href="https://bootstrapious.com/" target="_blank" class="external">Bootstrapious</a></p>
+          <p><a href="https://github.com/mathcam/mathcam.github.io" target="_blank">{{ "Site web open-source" if lang == "fr" else "Open-source website" }}</a></p>
         </div>
       </div>
       <div class="row d-none d-md-block text-center mt-5">
-        <!-- <a href="/start-lecture">Commencer un cours</a> -->
       </div>
     </div>
   </div>
 </footer>
+<!-- <a href="https://wa.me/message/M6SLEXQHDUSHI1" target="_blank" class="floating-icon">
+  <i class="fab fa-whatsapp my-float"></i>
+</a>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+</span> -->

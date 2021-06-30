@@ -517,14 +517,14 @@ section.features .text p {
 *     BOOKS GALLERY
 * ==========================================================
 */
-#books-gallery .item{
+/*#books-gallery .item{
   margin: 3px;
 }
 #books-gallery .item img{
   display: block;
   width: 100%;
   height: auto;
-}
+}*/
 
 
 
@@ -564,19 +564,76 @@ section.extra-features .item p {
   font-weight: 300;
   margin: 20px 0;
 }
+/*
+* ==========================================================
+*     TESTIMONIALS SECTION 2
+* ==========================================================
+*/
+.card {
+    position: relative;
+    border: solid 1px #E04444;
+    padding: 45px 50px 25px 60px;
+    margin-top: 200px;
+    background-color: #E04444;
+    border-radius: 10px;
+    color: #fff;
+}
 
+.post-txt {
+    /*font-size: 20px;*/
+    margin-bottom: 0;
+}
+
+.quote-img {
+    position: absolute;
+    top: 32px;
+    left: 25px;
+    width: 30px;
+    height: 30px;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 20px solid #E04444;
+    margin-left: 65px;
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile-pic {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    left: 65px;
+    margin-top: 15px;
+}
+
+.profile-name {
+    position: absolute;
+    /*font-size: 22px;*/
+    margin-top: 20px;
+    left: 170px;
+    color: #616161;
+}
 /*
 * ==========================================================
 *     TESTIMONIALS SECTION
 * ==========================================================
 */
-section.testimonials .owl-carousel .owl-stage-outer {
+/*section.testimonials .owl-carousel .owl-stage-outer {
   padding: 70px 0 50px;
-}
+}*/
 
-section.testimonials .item-holder {
-  padding-right: 40px;
-  padding-left: 40px;
+/*section.testimonials .item-holder {
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 section.testimonials .quote {
@@ -593,7 +650,7 @@ section.testimonials .item {
   margin-right: 0;
   padding: 70px 50px;
   padding-left: 70px;
-  /*height: 500px;*/
+  height: 500px;
 }
 
 section.testimonials .item p {
@@ -617,7 +674,6 @@ section.testimonials .avatar {
   box-shadow: -5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2);
 }
 
-/* Testimonials Media Query ------------------------- */
 @media (max-width: 1199px) {
   section.testimonials .item {
     -webkit-box-shadow: -5.665px 9.429px 25px 0px rgba(0, 0, 0, 0.2);
@@ -629,7 +685,7 @@ section.testimonials .avatar {
     top: 0;
     left: 50%;
   }
-}
+}*/
 
 /*
 * ==========================================================
@@ -1561,6 +1617,12 @@ h2,
   font-size: 2.2rem;
 }
 
+@media (max-width: 575px) {
+  h2, .h2 {
+    font-size: 2.0rem;
+  }
+}
+
 h3,
 .h3 {
   font-size: 1.75rem;
@@ -1924,3 +1986,25 @@ a.text-dark:focus, a.text-dark:hover {
   text-align: left;
   position: relative;
 }
+
+/*
+* ==========================================================
+*     FLOATING WHATSAPP ICON
+* ==========================================================
+*/
+/*.floating-icon{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#0C9;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+  margin-top:22px;
+}*/

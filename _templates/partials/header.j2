@@ -1,34 +1,56 @@
+<div class="bg-primary">
+  {% for device, size in [('d-block d-md-none', 'h5 p-1'), ('d-none d-md-block', 'h3 p-1')] %}
+    <div class="{{ device }}">
+      <p class="text-center text-white {{ size }}">
+        {% if available %}
+          {{ "1er cours gratuit et sans engagement !" if lang == "fr" else "free trial lesson without obligation!" }}
+        {% else %}
+          {{ "Malheureusement, je suis actuellement indisponible." if lang == "fr" else "Unfortunately, I am currently unavailable." }}<br />
+          <a href="#contact-us" class="text mt-1 link-scroll" style="color: blue;">{{ "Cliquez ici pour être notifié de mon retour." if lang == "fr" else "Click here to be notified when I'm back." }}</a>
+        {% endif %}
+      </p>
+    </div>
+  {% endfor %}
+</div>
 <!-- navbar-->
 <header class="header">
   <nav class="navbar navbar-expand-lg fixed-top">
     <img src="img/logo.svg" alt="Mathcam's logo" style="height: 50px;" class="float-left">
-    <a href="/" class="navbar-brand">Mathcam</a>
+    {% if lang == 'fr' and inter %}
+      <a href="/" class="navbar-brand">Mathcam</a>
+    {% elif lang == 'en' and inter %}
+      <a href="en.html" class="navbar-brand">Mathcam</a>
+    {% elif lang == 'fr' and not inter %}
+      <a href="fr-ch.html" class="navbar-brand">Mathcam</a>
+    {% elif lang == 'en' and not inter %}
+      <a href="en-ch.html" class="navbar-brand">Mathcam</a>
+    {% endif %}
     <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto align-items-start align-items-lg-center">
-          <li class="nav-item"><a href="#levels-list" class="nav-link link-scroll">Services</a></li>
-          <li class="nav-item"><a href="#extra-features" class="nav-link link-scroll">Avantages</a></li>
-          <li class="nav-item"><a href="#about-us" class="nav-link link-scroll">Qui suis-je</a></li>
-          <li class="nav-item"><a href="#testimonials" class="nav-link link-scroll">Témoignages</a></li>
-          <li class="nav-item"><a href="/faq" class="nav-link">FAQ</a></li>
+          {% if index %}
+          <li class="nav-item"><a href="#levels-list" class="nav-link link-scroll">{{ "Branches et niveaux" if lang == "fr" else "Subjects and levels" }}</a></li>
+          <li class="nav-item"><a href="#about-us" class="nav-link link-scroll">{{ "Qui suis-je" if lang == "fr" else "About me" }}</a></li>
+          <li class="nav-item"><a href="#testimonials" class="nav-link link-scroll">{{ "Témoignages" if lang == "fr" else "Testimonials" }}</a></li>
+          {% endif %}
+          <li class="nav-item"><a href="#contact-us" class="nav-link link-scroll">Contact</a></li>
           <!-- <li class="nav-item"><a href="/" class="nav-link">Accueil</a></li>
           <li class="nav-item"><a href="/faq" class="nav-link">FAQ</a></li> -->
       </ul>
-      <div class="navbar-text">   
-        <a href="#contact-us" class="btn btn-primary navbar-btn btn-shadow btn-gradient link-scroll">M'appeler</a>
-      </div>
 
-      <div class="dropdown">
-        <button class="btn btn-outline-primary dropdown-toggle ml-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{ "Langue" if lang == "fr" else "Language" }}
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/">Français</a>
-          <a class="dropdown-item" href="en.html">English</a>
-          <a class="dropdown-item" href="fr-ch.html">Français (CH)</a>
-          <a class="dropdown-item" href="en-ch.html">English (CH)</a>
+      {% if index %}
+        <div class="dropdown">
+          <button class="btn btn-outline-primary dropdown-toggle ml-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ "Langue" if lang == "fr" else "Language" }}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/">Français</a>
+            <a class="dropdown-item" href="en.html">English</a>
+            <a class="dropdown-item" href="fr-ch.html">Français (CH)</a>
+            <a class="dropdown-item" href="en-ch.html">English (CH)</a>
+          </div>
         </div>
-      </div>
+      {% endif %}
     </div>
   </nav>
 </header>

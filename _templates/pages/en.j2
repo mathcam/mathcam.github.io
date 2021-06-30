@@ -1,3 +1,6 @@
+{% set lang = 'en' %}
+{% set inter = True %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,11 +9,10 @@
     <meta name="description" content="Hello! I'm a Swiss freelance online tutor offering lessons in math, physics and chemistry for the levels &quot;collège&quot; and &quot;lycée&quot; of the French education system.">
   </head>
   <body>
-    {% set lang = 'en' %}
-
+    {% set index = True %}
     {% include 'partials/header.j2' %}
 
-    {% set title = 'French-speaking math / physics online tutor, free trial lesson without obligation!' %}
+    {% set title = 'French-speaking math / physics online tutor' %}
     {% set subtitle = 'Lessons with interactive online whiteboard and videoconference (by webcam / Skype / Zoom)' %}
     {% include 'partials/picture.j2' %}
 
@@ -21,7 +23,6 @@
         <h2 class="text-center text-uppercase mb-5 mt-3">Subjects and Levels</h2>
 
         <div class="row">
-          <div class="row">
           <div class="col-12">
             <ul class="list-group mx-auto">
               <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Collège</li>
@@ -64,7 +65,7 @@
       <div class="container">
         <h2 class="text-center text-uppercase">About me</h2>
         <div class="row">
-          <p class="lead text-justify col-lg-9">Hello! I'm Authmane Terki, I live in Switzerland, more precisely in Lausanne. Freelance online tutor, <a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" target="_blank">ex developer</a>, founder of Mathcam a Swiss company in online tutoring, I offer lessons in math, physics and chemistry, mainly for the levels &quot;collège&quot; and &quot;lycée&quot; of the French and Swiss education system.<br /><br />After several years of experience, I have been able to bring together many very valuable tips, techniques and resources, old exams and awesome exercises.<br /><br />The satisfaction of the many students I have supported - many of whom have passed their exams - fuels my interest in teaching, while I have been passionate about math and physics since my younger age and <a href="/attestations.html" class="d-inline">qualified 3 times for the Swiss final of the International Mathematical and Logic Games Championship.</a></p>
+          <p class="lead text-justify col-lg-9">Hello! I'm Authmane Terki, I live in Switzerland, more precisely in Lausanne. Freelance online tutor, <a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" target="_blank">ex developer</a>, founder of Mathcam a Swiss company in online tutoring, I offer lessons in math, physics and chemistry, mainly for the levels &quot;collège&quot; and &quot;lycée&quot; of the French and Swiss education system.<br /><br />After several years of experience, I have been able to bring together many very valuable tips, techniques and resources, old exams and awesome exercises.<br /><br />The satisfaction of the many students I have supported - many of whom have passed their exams - fuels my interest in teaching, while I have been passionate about math and physics since my younger age and <a href="/attestations-{{lang}}.html" class="d-inline">qualified 3 times for the Swiss final of the International Mathematical and Logic Games Championship.</a></p>
           <figure class="figure col-lg-3 my-auto">
             <img class="rounded figure-img d-block mx-auto" style="height: 250px; width: 250px;" src="img/me2021_cropped_compressed.jpeg">
             <figcaption class="figure-caption d-block text-center">Authmane Terki</figcaption>
@@ -75,34 +76,10 @@
 
     {% include 'partials/testimonials.j2' %}
 
-    <!-- payment methods -->
-    <section>
-      <h2 class="text-center text-uppercase mb-5">Payment methods accepted</h2>
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <figure class="figure col-2">
-            <img class="img-fluid figure-img d-block mx-auto" src="img/payment/paypal.png">
-            <figcaption class="figure-caption d-none d-md-block text-center">PayPal</figcaption>
-          </figure>
-          <figure class="figure col-2">
-            <img class="img-fluid figure-img d-block mx-auto" src="img/payment/mastercard2.jpg">
-            <figcaption class="figure-caption d-none d-md-block text-center">Mastercard</figcaption>
-          </figure>
-          <figure class="figure col-2">
-            <img class="img-fluid figure-img d-block mx-auto" src="img/payment/visa2.png">
-            <figcaption class="figure-caption d-none d-md-block text-center">Visa</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
+    {% include 'partials/payment_methods.j2' %}
 
-    {% set all_curencies = False %}
     {% include 'partials/footer.j2' %}
     {% include 'partials/js_scripts.j2' %}
-
-    <script>
-      RSAlert('danger', '<span class="h4 text-uppercase">Free trial lesson!</span>', 120);
-    </script>
   </body>
 </html>
  
