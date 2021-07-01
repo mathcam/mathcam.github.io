@@ -1,5 +1,5 @@
 <div id="scrollTop">
-  <div class="d-flex align-items-center justify-content-end"><i class="fa fa-long-arrow-up"></i>{{ "En haut" if lang == 'fr' else "Top" }}</div>
+  <div class="d-flex align-items-center justify-content-end"><i class="fa fa-long-arrow-up"></i>{{ "En haut" if lang == 'fr' else "To top" }}</div>
 </div>
 
 <footer class="main-footer bg-gray">
@@ -7,9 +7,9 @@
   <section id="contact-us">
     <div class="container">
       {% if lang == 'fr' %}
-        <h2 class="text-center text-uppercase font-weight-bold">1<sup>er</sup> cours gratuit et sans engagement !</h1>
+        <h2 class="text-center text-uppercase font-weight-bold">1<sup>er</sup> cours gratuit et sans engagement !</h2>
       {% else %}
-        <h2 class="text-center text-uppercase font-weight-bold">1<sup>st</sup> lesson free and without obligation!</h1>
+        <h2 class="text-center text-uppercase font-weight-bold">1<sup>st</sup> lesson free and without obligation!</h2>
       {% endif %}
       <p class="text-center">
         {{ "... puis au tarif ci-dessous pour chaque période de cours. Une période dure 50 min avec jusqu'à 10 min offertes non garanties. Concernant les tarifs des cours en groupe, merci de me contacter." if lang == 'fr' else "... then at the price below for each lesson period. A period lasts 50 min with up to 10 min offered not guaranteed. Regarding the prices of group lessons, please contact me." }}
@@ -32,23 +32,18 @@
           {% endif %}
           <!-- <li><i class="fa fa-envelope"></i> <a class="text-primary" href="mailto:info@mathcam.ch">info@mathcam.ch</a></li> -->
         </ul>
-        <!-- <ul class="social-icons list-inline">
-          <li class="list-inline-item"><a href="https://maps.app.goo.gl/WUsiXCzBcSmHjmM19" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
-          <li class="list-inline-item"><a href="https://www.facebook.com/mathcam.ch" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-          <li class="list-inline-item"><a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-        </ul> -->
         {% if available %}
           <div class="row mb-5">
             <div class="col-lg-4 px-1 mb-1">
-              <a class="btn btn-primary" href="https://m.me/mathcam.ch" target="_blank" style="background-color: #0078FF; border-color: #0078FF;"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> Discuter sur Messenger</a>
+              <a class="btn btn-primary" href="https://m.me/mathcam.ch" target="_blank" style="background-color: #0078FF; border-color: #0078FF;"><i class="fab fa-facebook-messenger" aria-hidden="true"></i>{{ " Discuter sur Messenger" if lang == "fr" else " Start chat on Messenger" }}</a>
             </div>
 
             <div class="col-lg-4 px-1 mb-1">
-              <a class="btn btn-primary" href="https://wa.me/message/M6SLEXQHDUSHI1" target="_blank" style="background-color: #25d366; border-color: #25d366;"><i class="fab fa-whatsapp" aria-hidden="true"></i> Discuter sur Whatsapp</a>
+              <a class="btn btn-primary" href="https://wa.me/message/M6SLEXQHDUSHI1" target="_blank" style="background-color: #25d366; border-color: #25d366;"><i class="fab fa-whatsapp" aria-hidden="true"></i>{{ " Discuter sur Whatsapp" if lang == "fr" else " Start chat on Whatsapp" }}</a>
             </div>
 
             <div class="col-lg-4 px-1 mb-1">
-              <a class="btn btn-primary" href="https://t.me/mathcam2019" target="_blank" style="background-color: #0088cc; border-color: #0088cc;"><i class="fab fa-telegram" aria-hidden="true"></i> Discuter sur Telegram</a>
+              <a class="btn btn-primary" href="https://t.me/mathcam2019" target="_blank" style="background-color: #0088cc; border-color: #0088cc;"><i class="fab fa-telegram" aria-hidden="true"></i>{{ " Discuter sur Telegram" if lang == "fr" else " Start chat on Telegram" }}</a>
             </div>
           </div>
         {% endif %}
@@ -57,9 +52,9 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           {% if available %}
-            <h3 class="text-center mb-3">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</h2>
+            <h3 class="text-center mb-3">{{ "Recevoir un appel gratuit" if lang == "fr" else "Get a free call" }}</h3>
           {% else %}
-            <h3 class="text-center mb-3">{{ "Être notifié de mon retour" if lang == "fr" else "Be notified when I'm back" }}</h2>
+            <h3 class="text-center mb-3">{{ "Être notifié de mon retour" if lang == "fr" else "Be notified when I'm back" }}</h3>
           {% endif %}
           <form id="contact-form" method="post" action="https://formspree.io/f/mnqlzqpn">
             <div class="messages"></div>
@@ -132,7 +127,7 @@
         <p>Authmane Terki<br />
         Allée du Tilleul 8<br />
         1022 Chavannes-près-Renens<br />
-        Suisse</p>
+        {{ "Suisse" if lang == "fr" else "Switzerland" }}</p>
         <ul class="social-icons list-inline">
           <li class="list-inline-item"><a href="{{ GPAGE }}" target="_blank" title="Google"><i class="fab fa-google"></i></a></li>
           <li class="list-inline-item"><a href="https://www.facebook.com/mathcam.ch" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>

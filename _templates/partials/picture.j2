@@ -4,7 +4,7 @@
     <img src="/img/video-thumbnail-345-play2.jpg" class="img-fluid play-youtube-video">
   </div> -->
   <div class="youtube-video-place" data-yt-url="https://www.youtube-nocookie.com/embed/hfQtkPJAtwM">
-    <img src="/img/video-thumbnail-345-play2.jpg" class="img-fluid play-youtube-video">
+    <img src="/img/video-thumbnail-345-play2.jpg" class="img-fluid play-youtube-video" alt="mathcam's video thumbnail">
   </div>
 
   <!-- <div class="d-block d-md-none mt-4">
@@ -15,11 +15,11 @@
     <h1 class="mb-3" style="font-size: 58px;">{{ title }}</h1>
     <h2 class="font-weight-bold" style="font-size: 26px;">{{ subtitle }}</h2>
   </div> -->
-  <h1 class="h3 mt-4 mb-3">{{ title }}</h1>
-  <h2 class="h5 font-weight-bold">{{ subtitle }}</h2>
+  <h1 class="h3 font-weight-bold mt-4 mb-3">{{ title }}</h1>
+  <h2 class="h5">{{ subtitle }}</h2>
   
   <figure class="figure d-block text-center mt-4">
-    <img srcset="img/illustration_final.jpeg 960w, img/illustration_final345.jpg 345w" class="img-fluid figure-img" alt="Authmane Terki, enseignant en ligne de maths et physique">
-    <figcaption class="figure-caption d-block">Authmane Terki, enseignant en ligne de maths et physique</figcaption>
+    <img srcset="img/illustration_final345.jpg 345w, img/illustration_final.jpeg 960w" src="img/illustration_final345.jpg" sizes="90vw" class="img-fluid figure-img" alt="Authmane Terki, enseignant en ligne de maths et physique">
+    <figcaption class="figure-caption d-block">Authmane Terki, {{ "enseignant en ligne de maths et physique" if lang == "fr" else "online math and physics tutor" }} </figcaption>
   </figure>
 </div> 

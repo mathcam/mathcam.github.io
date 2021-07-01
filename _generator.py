@@ -31,5 +31,5 @@ with open('attestations-en.html', 'w') as file:
   html = html_minify(template.render(GPAGE=GPAGE, available=available, lang='en'))
   file.write(html)
 
-process_single_js_file('js/front.js', overwrite=False)
+# process_single_js_file('js/front.js', overwrite=False) # NOT WORKING CORRECTLY
 process_single_css_file('css/style.css', overwrite=False)

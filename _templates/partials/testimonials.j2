@@ -1,12 +1,12 @@
 <!-- testimonials -->
 <section id="testimonials">
   <div class="container-fluid">
-    <h2 class="text-center text-uppercase mt-5">{{ "Témoignages" if lang == "fr" else "Testimonials" }}</h2>
-    <div class="row justify-content-center mb-5">
+    <h2 class="text-center text-uppercase">{{ "Témoignages" if lang == "fr" else "Testimonials" }}</h2>
+    <div class="row justify-content-center">
       {% for t in testimonials %}
-      <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7">
+      <div class="testimonial-box col-sm-11 col-md-9 col-lg-8 col-xl-7">
         <div class="card">
-          <p class="post"> <span><img class="quote-img" src="img/quote.svg"></span> <span class="post-txt">{{ t.msg }}</span></p>
+          <p class="post"> <span><img class="quote-img" src="img/quote.svg" alt="quote"></span> <span class="post-txt">{{ t.msg }}</span></p>
         </div>
         <div class="arrow-down"></div>
         <div class="row d-flex justify-content-center">
@@ -15,11 +15,11 @@
             {{ t.name }}<br />
             {{ t.info }}<br />
             {% if t.source == 'spm' %}
-            <span class="text-center text-secondary">source : <a href="{{ SPM }}" target="_blank">Superprof</a></span>
+            <span class="text-secondary">source :</span> <a href="{{ SPM }}" target="_blank">Superprof</a>
             {% elif t.source == 'spp' %}
-            <span class="text-center text-secondary">source : <a href="{{ SPP }}" target="_blank">Superprof</a></span>
+            <span class="text-secondary">source :</span> <a href="{{ SPP }}" target="_blank">Superprof</a>
             {% elif t.source == 'gg' %}
-            <span class="text-center text-secondary">source : <a href="{{ GPAGE }}" target="_blank">Google</a></span>
+            <span class="text-secondary">source :</span> <a href="{{ GPAGE }}" target="_blank">Google</a>
             {% endif %}
           </p>
         </div>
@@ -28,33 +28,3 @@
     </div>
   </div>
 </section>
-<!-- <section id="testimonials" class="testimonials">
-  <div class="container-fluid">
-    <header class="no-margin-bottom">
-      <div class="text-center">
-        <h2 class="text-uppercase">{{ "Témoignages" if lang == "fr" else "Testimonials" }}</h2>
-      </div>
-    </header>
-    <div class="row">
-      {% for t in testimonials %}
-      <div class="item-holder col-lg-4 col-md-6 mt-5">
-        <div class="item">
-          <div class="avatar"><img src="img/avatars/{{ t.avatar }}" alt="..." class="img-fluid"></div>
-          <div class="text">
-            <div class="quote"><img src="img/quote.svg" alt="..." class="img-fluid"></div>
-            <p class="text-justify">{{ t.msg }}</p><strong class="name">{{ t.name }}</strong><br />{{ t.info }}<br />
-            {% if t.source == 'spm' %}
-            <span class="mt-2 text-secondary">source : <a href="{{ SPM }}" target="_blank">Superprof</a></span>
-            {% elif t.source == 'spp' %}
-            <span class="mt-2 text-secondary">source : <a href="{{ SPP }}" target="_blank">Superprof</a></span>
-            {% elif t.source == 'gg' %}
-            <span class="mt-2 text-secondary">source : <a href="{{ GPAGE }}" target="_blank">Google</a></span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-
-    </div>
-  </div>
-</section>  -->

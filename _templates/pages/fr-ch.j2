@@ -26,35 +26,35 @@
           <div class="mx-auto d-none d-lg-block">
             <div id="canton-selector" class="btn-group btn-group-toggle mb-2" data-toggle="buttons">
               <label onclick="selectCanton('vaud');" class="btn btn-light border active">
-                <input type="radio" name="options" id="vaud-option" autocomplete="off" checked>
+                <input type="radio" name="options" id="vaud-option" checked>
                 <span class="mx-auto">Vaud</span>
               </label>
               <label onclick="selectCanton('geneve');" class="btn btn-light border">
-                <input type="radio" name="options" id="geneve-option" autocomplete="off">
+                <input type="radio" name="options" id="geneve-option">
                 <span class="mx-auto">Genève</span>
               </label>
               <label onclick="selectCanton('fribourg');" class="btn btn-light border">
-                <input type="radio" name="options" id="fribourg-option" autocomplete="off">
+                <input type="radio" name="options" id="fribourg-option">
                 <span class="mx-auto">Fribourg</span>
               </label>
               <label onclick="selectCanton('neuchatel');" class="btn btn-light border">
-                <input type="radio" name="options" id="neuchatel-option" autocomplete="off">
+                <input type="radio" name="options" id="neuchatel-option">
                 <span class="mx-auto">Neuchâtel</span>
               </label>
               <label onclick="selectCanton('valais');" class="btn btn-light border">
-                <input type="radio" name="options" id="valais-option" autocomplete="off">
+                <input type="radio" name="options" id="valais-option">
                 <span class="mx-auto">Valais</span>
               </label>
               <label onclick="selectCanton('berne');" class="btn btn-light border">
-                <input type="radio" name="options" id="berne-option" autocomplete="off">
+                <input type="radio" name="options" id="berne-option">
                 <span class="mx-auto">Berne</span>
               </label>
             </div>
           </div>
 
           <div class="mx-auto dropdown d-block d-lg-none mb-2">
-            <button class="btn btn-light border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Canton</button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <button class="btn btn-light border dropdown-toggle" type="button" id="cantonDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Canton</button>
+            <div class="dropdown-menu" aria-labelledby="cantonDropdownMenuButton">
               <button onclick="selectCanton('vaud');" class="dropdown-item" type="button">Vaud</button>
               <button onclick="selectCanton('geneve');" class="dropdown-item" type="button">Genève</button>
               <button onclick="selectCanton('fribourg');" class="dropdown-item" type="button">Fribourg</button>
@@ -154,13 +154,6 @@
 
             <h6><i class="fas fa-check-circle text-success"></i> Chimie</h6>
             <p>Atomes, Stœchiométrie (équations chimiques), Tableau périodique, Liaisons chimiques, Acides et bases, Nomenclature, etc</p>
-
-            <!-- <ul class="list-group mx-auto">
-              <li class="list-group-item"> Mathématiques</li>
-              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Math-Physique</li>
-              <li class="list-group-item"><i class="fas fa-check-circle text-success"></i> Physique</li>
-              <li class="list-group-item"><i class="fas fa-check-circle text-warning"></i> Chimie</li>
-            </ul> -->
           </div>
         </div>
       </div>

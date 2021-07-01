@@ -77,19 +77,9 @@ function selectCurrency(currency) {
         $("." + element + ".price-text").addClass('d-none');
     });
     $("." + currency + ".price-text").removeClass('d-none');
-    $('#dropdownMenuButton').text(currency.toUpperCase())
+    $('#currencyDropdownMenuButton').text(currency.toUpperCase())
 }
 selectCurrency('eur');
-// function updateSymbol(e){
-//   var selected = $(".currency-selector option:selected");
-//   $(".currency-symbol").text(selected.data("symbol"))
-//   $(".currency-amount").prop("placeholder", selected.data("placeholder"))
-//   $('.currency-addon-fixed').text(selected.text())
-// }
-
-// $(".currency-selector").on("change", updateSymbol)
-
-// updateSymbol()
 
 // ------------------------------------------------------- //
 // video
@@ -107,4 +97,11 @@ if(video_wrapper.length){
     } else {
         addVideo();
     }
+}
+
+// ------------------------------------------------------- //
+// tidio
+// ------------------------------------------------------- //
+if (window.matchMedia("(min-width: 576px)").matches) {
+    $.getScript("https://code.tidio.co/r07leqdenl2szvtdwzgccaqhadt8lmx6.js");
 }
