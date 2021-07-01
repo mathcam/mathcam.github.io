@@ -19,7 +19,11 @@
   <h2 class="h5">{{ subtitle }}</h2>
   
   <figure class="figure d-block text-center mt-4">
-    <img srcset="img/illustration_final345.jpg 345w, img/illustration_final.jpeg 960w" src="img/illustration_final345.jpg" sizes="90vw" class="img-fluid figure-img" alt="Authmane Terki, enseignant en ligne de maths et physique">
+    <picture>
+      <source type="image/webp" srcset="img/illustration_final345.webp 345w, img/illustration_final.webp 960w" sizes="90vw">
+      <source type="image/jpeg" srcset="img/illustration_final345.jpg 345w, img/illustration_final.jpeg 960w" sizes="90vw">
+      <img src="img/illustration_final345.jpg" srcset="img/illustration_final345.jpg 345w, img/illustration_final.jpeg 960w" sizes="90vw" class="img-fluid figure-img" alt="Authmane Terki, enseignant en ligne de maths et physique">
+    </picture>
     <figcaption class="figure-caption d-block">Authmane Terki, {{ "enseignant en ligne de maths et physique" if lang == "fr" else "online math and physics tutor" }} </figcaption>
   </figure>
 </div> 
