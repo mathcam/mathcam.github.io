@@ -103,5 +103,5 @@ if(video_wrapper.length){
 // tidio
 // ------------------------------------------------------- //
 if (window.matchMedia("(min-width: 576px)").matches) {
-    $.getScript("https://code.tidio.co/r07leqdenl2szvtdwzgccaqhadt8lmx6.js");
+    $('body').append('<script src="//code.tidio.co/r07leqdenl2szvtdwzgccaqhadt8lmx6.js"></script>');
 }
