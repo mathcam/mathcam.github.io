@@ -21,8 +21,10 @@
       <a href="/" class="navbar-brand">Mathcam</a>
     {% elif lang == 'en' and inter %}
       <a href="en.html" class="navbar-brand">Mathcam</a>
-    {% elif lang == 'fr' and not inter %}
+    {% elif lang == 'fr' and not inter and country == 'ch' %}
       <a href="fr-ch.html" class="navbar-brand">Mathcam</a>
+    {% elif lang == 'fr' and not inter and country == 'fr' %}
+      <a href="fr-fr.html" class="navbar-brand">Mathcam</a>
     {% elif lang == 'en' and not inter %}
       <a href="en-ch.html" class="navbar-brand">Mathcam</a>
     {% endif %}
@@ -47,6 +49,7 @@
             <a class="dropdown-item" href="en.html">English</a>
             <a class="dropdown-item" href="fr-ch.html">Français (CH)</a>
             <a class="dropdown-item" href="en-ch.html">English (CH)</a>
+            <a class="dropdown-item" href="fr-fr.html">Français (FR)</a>
           </div>
         </div>
       {% endif %}

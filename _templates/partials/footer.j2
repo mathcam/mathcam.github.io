@@ -18,7 +18,11 @@
       {% if inter %}
         {% include 'partials/price.j2' %}
       {% else %}
-        <p class="font-weight-bold text-center">{{ "Tarif : 35.00 CHF / période" if lang == 'fr' else "Price: 35.00 CHF / period" }}</p>
+        {% if country == 'ch' %}
+          <p class="font-weight-bold text-center">{{ "Tarif : 35.00 CHF / période" if lang == 'fr' else "Price: 35.00 CHF / period" }}</p>
+        {% elif country == 'fr' %}
+          <p class="font-weight-bold text-center">{{ "Tarif : 35.00 EUR / période" if lang == 'fr' else "Price: 35.00 EUR / period" }}</p>
+        {% endif %}
       {% endif %}
       
       {% if available %}
@@ -113,6 +117,7 @@
           <li> <a href="en.html">Online tutoring</a></li>
           <li> <a href="fr-ch.html">Cours à distance (CH)</a></li>
           <li> <a href="en-ch.html">Online tutoring (CH)</a></li>
+          <li> <a href="fr-fr.html">Cours à distance (FR)</a></li>
         </ul>
       </div>
 

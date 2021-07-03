@@ -1,5 +1,5 @@
 from jinja2 import Environment, FileSystemLoader
-from css_html_js_minify import process_single_js_file, process_single_css_file, html_minify
+from css_html_js_minify import process_single_css_file, html_minify
 
 from testimonials import testimonials
 
@@ -22,6 +22,7 @@ make_pg('index')
 make_pg('en')
 make_pg('fr-ch')
 make_pg('en-ch')
+make_pg('fr-fr')
 
 template = env.get_template(f'pages/attestations.j2')
 with open('attestations-fr.html', 'w') as file:
