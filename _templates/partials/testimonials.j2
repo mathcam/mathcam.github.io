@@ -15,11 +15,11 @@
             {{ t.name }}<br />
             {{ t.info }}<br />
             {% if t.source == 'spm' %}
-            <span class="text-secondary">source :</span> <a href="{{ SPM }}" target="_blank">Superprof</a>
+            <span class="text-secondary">source :</span> <a href="{{ SPM }}" rel="noopener nofollow" target="_blank">Superprof</a>
             {% elif t.source == 'spp' %}
-            <span class="text-secondary">source :</span> <a href="{{ SPP }}" target="_blank">Superprof</a>
+            <span class="text-secondary">source :</span> <a href="{{ SPP }}" rel="noopener nofollow" target="_blank">Superprof</a>
             {% elif t.source == 'gg' %}
-            <span class="text-secondary">source :</span> <a href="{{ GPAGE }}" target="_blank">Google</a>
+            <span class="text-secondary">source :</span> <a href="{{ GPAGE }}" rel="noopener nofollow" target="_blank">Google</a>
             {% endif %}
           </p>
         </div>
