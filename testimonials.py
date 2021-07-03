@@ -110,7 +110,12 @@ testimonials = [
   'avatar': 'female.png',
   'name': "Mère de Camille",
   'info': "11ème VP",
-  'source': 'spp'}
+  'source': 'spp'},
+  {'msg': "Excellent prof, il m’a beaucoup aidé à combler mes lacunes et sa façon de faire est vraiment adaptée en fonction du thème traité.",
+  'avatar': 'female-pale.png',
+  'name': "Camille",
+  'info': "11ème VP",
+  'source': 'spm'}
 ] 
 
 # {'msg': "",
