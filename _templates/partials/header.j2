@@ -41,10 +41,10 @@
 
       {% if home %}
         <div class="dropdown">
-          <button class="btn btn-outline-primary dropdown-toggle ml-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-outline-primary dropdown-toggle ml-1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="languageDropdownMenuButton">
             {{ "Langue" if lang == "fr" else "Language" }}
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div class="dropdown-menu" aria-labelledby="languageDropdownMenuButton">
             <a class="dropdown-item" href="/">Français</a>
             <a class="dropdown-item" href="en.html">English</a>
             <a class="dropdown-item" href="fr-ch.html">Français (CH)</a>
