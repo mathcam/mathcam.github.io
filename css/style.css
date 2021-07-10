@@ -454,7 +454,7 @@ section.about-us p {
 *     FEATURES SECTION
 * ==========================================================
 */
-section.features .row {
+/*section.features .row {
   margin-bottom: 40px;
 }
 
@@ -473,14 +473,14 @@ section.features .text p {
   font-size: 0.95rem;
   color: #656565;
   margin: 20px 0 25px;
-}
+}*/
 
 /* Features Section Mediaquery -------------------------- */
-@media (max-width: 1199px) {
+/*@media (max-width: 1199px) {
   section.features .text {
     margin-bottom: 50px;
   }
-}
+}*/
 
 
 /*
@@ -497,10 +497,10 @@ section.extra-features h3 {
   color: inherit;
 }
 
-section.extra-features .icon {
+/*section.extra-features .icon {
   font-size: 2.7rem;
   margin-bottom: 20px;
-}
+}*/
 
 section.extra-features .item {
   padding: 50px 30px;
@@ -518,6 +518,25 @@ section.extra-features .item:hover {
 section.extra-features .item p {
   font-weight: 300;
   margin: 20px 0;
+}
+/*
+* ==========================================================
+*     ICONS
+* ==========================================================
+*/
+.icon-icomoon {
+  /*display: inline-block;*/
+  width: 1em;
+  height: 1em;
+  /*stroke-width: 0;*/
+  /*stroke: currentColor;*/
+  fill: currentColor;
+}
+
+.icon-advantage {
+  width: 70px;
+  height: 70px;
+  fill: currentColor;
 }
 /*
 * ==========================================================
@@ -549,6 +568,7 @@ section.extra-features .item p {
     left: 25px;
     width: 30px;
     height: 30px;
+    fill: white;
 }
 
 .arrow-down {
