@@ -1,0 +1,13 @@
+{% if cur_page == 'home' %}
+  <a class="dropdown-item" href="/">Français (international)</a>
+  <a class="dropdown-item" href="fr-ch.html">Français (Suisse)</a>
+  <a class="dropdown-item" href="fr-fr.html">Français (France)</a>
+  <a class="dropdown-item" href="en.html">English (international)</a>
+  <a class="dropdown-item" href="en-ch.html">English (Switzerland)</a>
+{% elif cur_page == 'attestations' %}
+  <a class="dropdown-item" href="attestations-fr.html">Français (international)</a>
+  <a class="dropdown-item" href="attestations-en.html">English (international)</a>
+{% elif cur_page == 'booking' %}
+  <a class="dropdown-item" href="booking-fr.html">Français (international)</a>
+  <a class="dropdown-item" href="booking-en.html">English (international)</a>
+{% endif %}
