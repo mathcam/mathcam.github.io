@@ -24,11 +24,19 @@ make_pg('fr-ch')
 make_pg('en-ch')
 make_pg('fr-fr')
 
-template = env.get_template(f'pages/attestations.j2')
+template = env.get_template('pages/attestations.j2')
 with open('attestations-fr.html', 'w') as file:
   html = html_minify(template.render(GPAGE=GPAGE, available=available, lang='fr'))
   file.write(html)
 with open('attestations-en.html', 'w') as file:
+  html = html_minify(template.render(GPAGE=GPAGE, available=available, lang='en'))
+  file.write(html)
+
+template = env.get_template('pages/booking.j2')
+with open('reserver.html', 'w') as file:
+  html = html_minify(template.render(GPAGE=GPAGE, available=available, lang='fr'))
+  file.write(html)
+with open('book.html', 'w') as file:
   html = html_minify(template.render(GPAGE=GPAGE, available=available, lang='en'))
   file.write(html)
 
