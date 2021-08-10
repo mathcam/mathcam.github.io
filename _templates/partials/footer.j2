@@ -12,16 +12,16 @@
         <h2 class="text-center text-uppercase font-weight-bold">1<sup>st</sup> lesson free and without obligation!</h2>
       {% endif %}
       <p class="text-center">
-        {{ "... puis au tarif ci-dessous pour chaque période de cours. Une période dure 50 min avec jusqu'à 10 min offertes non garanties. Concernant les tarifs des cours en groupe, merci de me contacter." if lang == 'fr' else "... then at the price below for each lesson period. A period lasts 50 min with up to 10 min offered not guaranteed. Regarding the prices of group lessons, please contact me." }}
+        {{ "... puis au tarif ci-dessous pour chaque période de cours. Une période dure 45 min avec jusqu'à 10 min offertes non garanties. Concernant les tarifs des cours en groupe, merci de me contacter." if lang == 'fr' else "... then at the price below for each lesson period. A period lasts 45 min with up to 10 min offered not guaranteed. Regarding the prices of group lessons, please contact me." }}
       </p>
 
       {% if inter %}
         {% include 'partials/price.j2' %}
       {% else %}
         {% if country == 'ch' %}
-          <p class="font-weight-bold text-center">{{ "Tarif : 35.00 CHF / période" if lang == 'fr' else "Price: 35.00 CHF / period" }}</p>
+          <p class="font-weight-bold text-center">{{ "Tarif : 50.00 CHF / période" if lang == 'fr' else "Price: 50.00 CHF / period" }}</p>
         {% elif country == 'fr' %}
-          <p class="font-weight-bold text-center">{{ "Tarif : 35.00 EUR / période" if lang == 'fr' else "Price: 35.00 EUR / period" }}</p>
+          <p class="font-weight-bold text-center">{{ "Tarif : 25.00 EUR / période" if lang == 'fr' else "Price: 25.00 EUR / period" }}</p>
         {% endif %}
       {% endif %}
       
