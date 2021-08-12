@@ -1,4 +1,4 @@
-{% for currency, price in [('EUR', '25.00'), ('USD', '30.00'), ('GBP', '22.00'), ('CAD', '35.00'), ('AUD', '40.00'), ('CHF', '30.00')] %}
+{% for currency, price in [('EUR', '25.00'), ('USD', '30.00'), ('GBP', '22.00'), ('CAD', '35.00'), ('AUD', '40.00')] %}
   <p class="price-text {{ currency.lower() }} font-weight-bold text-center">{{ "Tarif : {} {} / période".format(price, currency) if lang == 'fr' else "Price: {} {} / period".format(price, currency) }}</p>
 {% endfor %}
 
@@ -10,6 +10,5 @@
     <button onclick="selectCurrency('gbp');" class="dropdown-item" type="button">GBP</button>
     <button onclick="selectCurrency('cad');" class="dropdown-item" type="button">CAD</button>
     <button onclick="selectCurrency('aud');" class="dropdown-item" type="button">AUD</button>
-    <button onclick="selectCurrency('chf');" class="dropdown-item" type="button">CHF</button>
   </div>
 </div>

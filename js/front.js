@@ -71,7 +71,7 @@ selectCanton('vaud');
 // ------------------------------------------------------- //
 // currency selector
 // ------------------------------------------------------- //
-var currencies_list = ['eur', 'usd', 'gbp', 'cad', 'aud', 'chf'];
+var currencies_list = ['eur', 'usd', 'gbp', 'cad', 'aud'];
 function selectCurrency(currency) {
     currencies_list.filter(function(x) { return x !== currency }).forEach(function(element) {
         $("." + element + ".price-text").addClass('d-none');
