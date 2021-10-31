@@ -1,3 +1,4 @@
+{% if cur_page != 'gift' %}
 <div class="bg-primary">
   {% for device, size in [('d-block d-md-none', 'h5 p-1'), ('d-none d-md-block', 'h3 p-1')] %}
     <div class="{{ device }}">
@@ -12,6 +13,7 @@
     </div>
   {% endfor %}
 </div>
+{% endif %}
 
 {% if cur_page == 'home' %}
   {% if lang == 'fr' and inter %}
@@ -32,11 +34,11 @@
   {% endif %}
 {% else %}
   {% if lang == 'fr' %}
-    {% set homepage = '/' %}
-    {% set lang_text = 'Français (international)' %}
+    {% set homepage = 'fr-ch.html' %}
+    {% set lang_text = 'Français (Suisse)' %}
   {% elif lang == 'en' %}
-    {% set homepage = 'en.html' %}
-    {% set lang_text = 'English (international)' %}
+    {% set homepage = 'en-ch.html' %}
+    {% set lang_text = 'English (Switzerland)' %}
   {% endif %}
 {% endif %}
 

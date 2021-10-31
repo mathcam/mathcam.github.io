@@ -6,16 +6,16 @@
 <html lang="fr">
   <head>
     {% include 'partials/head.j2' %}
-    <title>Cours de maths/physique à distance, 1er gratuit sans engag.</title>
-    <meta name="description" content="Enseignant en ligne suisse indépendant proposant des cours en maths, physique, OS maths-physique (de 9-11ème Harmos en Suisse romande) et chimie">
+    <title>Cours de maths/physique VD/GE/NE/FR, 1er gratuit sans engag</title>
+    <meta name="description" content="Enseignant suisse indépendant proposant des cours en maths, physique, OS maths-physique (de 9-11ème Harmos en Suisse romande) et chimie">
     <link rel="canonical" href="https://mathcam.github.io/fr-ch.html">
   </head>
   <body>
     {% set cur_page = 'home' %}
     {% include 'partials/header.j2' %}
 
-    {% set title = 'Cours de maths / physique à distance' %}
-    {% set subtitle = 'Par tableau interactif et visio-conférence (par webcam / Skype / Zoom)' %}
+    {% set title = 'Cours de maths / physique en Suisse romande (Vaud, Genève, Neuchâtel, Fribourg)' %}
+    {% set subtitle = 'À domicile, dans un café, ou à distance (webcam/Zoom)' %}
     {% include 'partials/picture.j2' %}
 
 
@@ -34,21 +34,21 @@
                 <input type="radio" name="options" id="geneve-option">
                 <span class="mx-auto">Genève</span>
               </label>
-              <label onclick="selectCanton('fribourg');" class="btn btn-light border">
-                <input type="radio" name="options" id="fribourg-option">
-                <span class="mx-auto">Fribourg</span>
-              </label>
               <label onclick="selectCanton('neuchatel');" class="btn btn-light border">
                 <input type="radio" name="options" id="neuchatel-option">
                 <span class="mx-auto">Neuchâtel</span>
               </label>
-              <label onclick="selectCanton('valais');" class="btn btn-light border">
+              <label onclick="selectCanton('fribourg');" class="btn btn-light border">
+                <input type="radio" name="options" id="fribourg-option">
+                <span class="mx-auto">Fribourg</span>
+              </label>
+              <!-- <label onclick="selectCanton('valais');" class="btn btn-light border">
                 <input type="radio" name="options" id="valais-option">
                 <span class="mx-auto">Valais</span>
               </label>
               <label onclick="selectCanton('berne');" class="btn btn-light border">
                 <input type="radio" name="options" id="berne-option">
-                <span class="mx-auto">Berne</span>
+                <span class="mx-auto">Berne</span> -->
               </label>
             </div>
           </div>
@@ -60,8 +60,8 @@
               <button onclick="selectCanton('geneve');" class="dropdown-item" type="button">Genève</button>
               <button onclick="selectCanton('fribourg');" class="dropdown-item" type="button">Fribourg</button>
               <button onclick="selectCanton('neuchatel');" class="dropdown-item" type="button">Neuchâtel</button>
-              <button onclick="selectCanton('valais');" class="dropdown-item" type="button">Valais</button>
-              <button onclick="selectCanton('berne');" class="dropdown-item" type="button">Berne</button>
+              <!-- <button onclick="selectCanton('valais');" class="dropdown-item" type="button">Valais</button>
+              <button onclick="selectCanton('berne');" class="dropdown-item" type="button">Berne</button> -->
             </div>
           </div>
         </div>
@@ -92,19 +92,6 @@
             <p class="text-secondary text-center">Genève</p>
           </div>
         </div>
-        <div class="canton-schools fribourg row">
-          <div class="col-12">
-            <ul class="list-group mx-auto">
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Cycle d'orientation</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Collège / Gymnase</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École supérieure de commerce</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École de culture générale</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Apprentissage</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Maturité professionnelle</li>
-            </ul>
-            <p class="text-secondary text-center">Fribourg</p>
-          </div>
-        </div>
         <div class="canton-schools neuchatel row">
           <div class="col-12">
             <ul class="list-group mx-auto">
@@ -118,7 +105,20 @@
             <p class="text-secondary text-center">Neuchâtel</p>
           </div>
         </div>
-        <div class="canton-schools valais row">
+        <div class="canton-schools fribourg row">
+          <div class="col-12">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Cycle d'orientation</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Collège / Gymnase</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École supérieure de commerce</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École de culture générale</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Apprentissage</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Maturité professionnelle</li>
+            </ul>
+            <p class="text-secondary text-center">Fribourg</p>
+          </div>
+        </div>
+        <!-- <div class="canton-schools valais row">
           <div class="col-12">
             <ul class="list-group mx-auto">
               <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Cycle d'orientation</li>
@@ -143,7 +143,7 @@
             </ul>
             <p class="text-secondary text-center">Berne</p>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <div class="col-12 text-center mx-auto" style="max-width: 500px;">
@@ -160,16 +160,14 @@
       </div>
     </section>
 
-    {% include 'partials/working.j2' %}
-
-    {% include 'partials/advantages.j2' %}
+    {% include 'partials/places.j2' %}
 
     <!-- about me -->
     <section id="about-us" class="about-us bg-gray">
       <div class="container">
         <h2 class="text-center text-uppercase">Qui suis-je</h2>
         <div class="row">
-          <p class="lead text-justify col-lg-9">Bonjour ! Je suis Authmane Terki, né à Morges, je vis actuellement dans la région de Lausanne. Enseignant et répétiteur en ligne indépendant, <a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" rel="noopener nofollow" target="_blank">ex développeur</a>, fondateur de Mathcam entreprise suisse dans l'enseignement à distance, je propose des cours ou appuis en maths, physique et chimie pour les élèves de fin de secondaire et de gymnase, les apprentis et les adultes en formation, et spécialement pour le programme de l'OS maths-physique de 9-11ème Harmos que je maîtrise jusqu'aux plus petits détails.<br /><br />Après plusieurs années d'expérience, j'ai pu réunir de multiples astuces, techniques et ressources très précieuses, d'anciens examens et des exercices inédits.<br /><br />La satisfaction des nombreux élèves que j'ai soutenus - dont une bonne partie qui ont réussi avec succès leur examen - alimente mon intérêt pour l'enseignement, tandis que je me passionne pour les maths et la physique depuis mon plus jeune âge et <a href="/attestations-{{lang}}.html" class="d-inline">me suis qualifié à 3 reprises à la finale suisse du Championnat International des Jeux Mathématiques et Logiques.</a></p>
+          <p class="lead text-justify col-lg-9">Bonjour ! Je suis Authmane Terki, né à Morges, je vis actuellement dans la région de Lausanne. Enseignant et répétiteur indépendant, <a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" rel="noopener nofollow" target="_blank">ex développeur</a>, fondateur de Mathcam entreprise suisse dans l'enseignement, je propose des cours ou appuis en maths, physique et chimie pour les élèves de fin de secondaire et de gymnase, les apprentis et les adultes en formation, et spécialement pour le programme de l'OS maths-physique de 9-11ème Harmos que je maîtrise jusqu'aux plus petits détails.<br /><br />Après plusieurs années d'expérience, j'ai pu réunir de multiples astuces, techniques et ressources très précieuses, d'anciens examens et des exercices inédits.<br /><br />La satisfaction des nombreux élèves que j'ai soutenus - dont une bonne partie qui ont réussi avec succès leur examen - alimente mon intérêt pour l'enseignement, tandis que je me passionne pour les maths et la physique depuis mon plus jeune âge et <a href="/attestations-{{lang}}.html" class="d-inline">me suis qualifié à 3 reprises à la finale suisse du Championnat International des Jeux Mathématiques et Logiques.</a></p>
           <figure class="figure col-lg-3 my-auto">
             <img class="rounded figure-img d-block mx-auto" style="height: 250px; width: 250px;" src="img/me2021_cropped_compressed.jpeg" alt="Authmane Terki" loading="lazy">
             <figcaption class="figure-caption d-block text-center">Authmane Terki</figcaption>

@@ -1,0 +1,22 @@
+<section id="extra-features" class="extra-features bg-primary">
+  <div class="container text-center">
+    <h2 class="text-uppercase">{{ 'Lieu' if lang == 'fr' else 'Location' }}</h2>
+    <div class="grid row">
+      <div class="item col-lg-4 col-md-6">
+        <div class="mx-auto mb-4"> <svg class="icon-advantage"><use xlink:href="img/symbol-defs.svg#icon-home"></use></svg></div>
+        <h3 class="h5">{{ 'À domicile' if lang == 'fr' else 'At home' }}</h3>
+        <p>{{ "Étant en mesure de me déplacer dans 4 cantons en Suisse romande, vous pouvez recevoir des cours directement à domicile." if lang == 'fr' else 'As I am able to travel to most of the French-speaking part of Switzerland, you can receive lessons directly at home.' }}</p>
+      </div>
+      <div class="item col-lg-4 col-md-6">
+        <div class="mx-auto mb-4"> <svg class="icon-advantage"><use xlink:href="img/symbol-defs.svg#icon-coffee"></use></svg></div>
+        <h3 class="h5">{{ 'Dans un café' if lang == 'fr' else 'In a café' }}</h3>
+        <p>{{ "Il est possible de se donner rendez-vous dans un café près de chez vous." if lang == 'fr' else 'It is possible to meet at a café near you.' }}</p>
+      </div>
+      <div class="item col-lg-4 col-md-6">
+        <div class="mx-auto mb-4"> <svg class="icon-advantage"><use xlink:href="img/symbol-defs.svg#icon-laptop"></use></svg></div>
+        <h3 class="h5">{{ 'En ligne' if lang == 'fr' else 'Online' }}</h3>
+        <p>{{ "Les cours peuvent être à distance par visioconférence (webcam / Zoom) et tableau interactif en ligne." if lang == 'fr' else 'Lessons can be held remotely via video conferencing (webcam / Zoom) and online interactive whiteboard.' }}</p>
+      </div>
+    </div>
+  </div>
+</section> 
