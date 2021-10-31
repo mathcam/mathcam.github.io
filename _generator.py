@@ -41,7 +41,7 @@ with open('book.html', 'w') as file:
   file.write(html)
 
 template = env.get_template('pages/gift.j2')
-with open('cadeau.html', 'w') as file:
+with open('45-min-cadeau.html', 'w') as file:
   html = html_minify(template.render(available=available, testimonials=testimonials, GPAGE=GPAGE, SPM=SPM, SPP=SPP, lang='fr'))
   file.write(html)
 
