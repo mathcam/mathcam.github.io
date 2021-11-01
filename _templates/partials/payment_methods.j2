@@ -4,6 +4,10 @@
     <div class="row justify-content-center">
       {% if not inter %}
         <figure class="figure col-4 col-sm-3 col-md-2">
+          <img class="img-fluid figure-img d-block mx-auto" src="img/payment/money2.png" alt="Cash" width="160" height="160" loading="lazy">
+          <figcaption class="figure-caption d-none d-md-block text-center">{{ "Espèces" if lang == "fr" else "Cash" }}</figcaption>
+        </figure>
+        <figure class="figure col-4 col-sm-3 col-md-2">
           <img class="img-fluid figure-img d-block mx-auto" src="img/payment/twint.png" alt="Twint" width="160" height="160" loading="lazy">
           <figcaption class="figure-caption d-none d-md-block text-center">Twint</figcaption>
         </figure>

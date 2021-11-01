@@ -7,8 +7,8 @@ env = Environment(loader=FileSystemLoader('_templates'))
 
 available = True
 GPAGE = "https://g.page/mathcam"
-SPM = "https://www.superprof.ch/cours-maths-physique-distance-enseignant-independant-fondateur-mathcam-developpeur.html"
-SPP = "https://www.superprof.ch/cours-distance-physique-enseignant-independant-fondateur-mathcam-developpeur.html"
+SPM = "https://www.superprof.ch/cours-maths-suisse-romande-vaud-geneve-neuchatel-fribourg-enseignant-independant-fondateur-mathcam-developpeur.html"
+SPP = "https://www.superprof.ch/cours-maths-physique-suisse-romande-vaud-geneve-neuchatel-fribourg-enseignant-independant-fondateur-mathcam.html"
 
 def make_pg(page):
   template = env.get_template(f'pages/{page}.j2')
