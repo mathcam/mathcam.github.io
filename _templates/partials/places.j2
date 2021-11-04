@@ -5,20 +5,37 @@
       <div class="item col-lg-4 col-md-6">
         <div class="mx-auto mb-4"> <svg class="icon-advantage"><use xlink:href="img/symbol-defs.svg#icon-home"></use></svg></div>
         <h3 class="h5">{{ 'À domicile' if lang == 'fr' else 'At home' }}</h3>
-        <p>{{ "Étant en mesure de me déplacer dans 4 cantons en Suisse romande, vous pouvez recevoir des cours directement à domicile." if lang == 'fr' else 'As I am able to travel to most of the French-speaking part of Switzerland, you can receive lessons directly at home.' }}</p>
+        {% if cant == None %}
+          <p>{{ "Étant en mesure de me déplacer dans 4 cantons en Suisse romande, vous pouvez recevoir des cours directement à domicile." if lang == 'fr' else 'As I am able to travel to most of the French-speaking part of Switzerland, you can receive lessons directly at home.' }}</p>
+        {% else %}
+          {# <p>{{ "Je peux me déplacer chez vous, afin que vous receviez mes cours directement à domicile." if lang == 'fr' else 'You can receive lessons directly at home.' }}</p> #}
+        {% endif %}
       </div>
       <div class="item col-lg-4 col-md-6">
         <div class="mx-auto mb-4"> <svg class="icon-advantage"><use xlink:href="img/symbol-defs.svg#icon-coffee"></use></svg></div>
         <h3 class="h5">{{ 'Dans un café' if lang == 'fr' else 'In a café' }}</h3>
-        <p>{{ "Il est possible de se donner rendez-vous dans un café près de chez vous." if lang == 'fr' else 'It is possible to meet at a café near you.' }}</p>
+        {% if cant == None %}
+          <p>{{ "Il est possible de se donner rendez-vous dans un café près de chez vous." if lang == 'fr' else 'It is possible to meet at a café near you.' }}</p>
+        {% endif %}
       </div>
       <div class="item col-lg-4 col-md-6">
         <div class="mx-auto mb-4"> <svg class="icon-advantage"><use xlink:href="img/symbol-defs.svg#icon-laptop"></use></svg></div>
         <h3 class="h5">{{ 'En ligne' if lang == 'fr' else 'Online' }}</h3>
-        <p>{{ "Les cours peuvent être à distance par visioconférence (webcam / Zoom) et tableau interactif en ligne." if lang == 'fr' else 'Lessons can be held remotely via video conferencing (webcam / Zoom) and online interactive whiteboard.' }}</p>
+        {% if cant == None %}
+          <p>{{ "Les cours peuvent être à distance par visioconférence (webcam / Zoom) et tableau interactif en ligne." if lang == 'fr' else 'Lessons can be held remotely via video conferencing (webcam / Zoom) and online interactive whiteboard.' }}</p>
+        {% endif %}
       </div>
     </div>
-    <!-- <h3>Quelques exemples de villes</h3> -->
-    <p class="mt-2">{{ 'Exemples de régions' if lang == 'fr' else 'Examples of regions' }} : Lausanne, Genève, Neuchâtel, Fribourg, La Chaux-de-Fonds, Yverdon-les-Bains, Montreux, Bulle, Nyon, Vevey, Pully, Morges</p>
+    {% if cant == 'vd' %}
+      <p class="mt-2">{{ 'Exemples de villes' if lang == 'fr' else 'Examples of cities' }} : Lausanne, Yverdon-les-Bains, Montreux, Renens, Nyon, Vevey, Pully, Morges, Gland, Écublens, Prilly, La Tour-de-Peilz, Lutry, Aigle</p>
+    {% elif cant == 'ge' %}
+      <p class="mt-2">Dans le canton de Genève</p>
+    {% elif cant == 'ne' %}
+      <p class="mt-2">Dans le canton de Neuchâtel</p>
+    {% elif cant == 'fr' %}
+      <p class="mt-2">Dans le canton de Fribourg</p>
+    {% elif cant == None %}
+      <p class="mt-2">{{ 'Exemples de régions' if lang == 'fr' else 'Examples of regions' }} : Lausanne, Genève, Neuchâtel, Fribourg, La Chaux-de-Fonds, Yverdon-les-Bains, Montreux, Bulle, Nyon, Vevey, Pully, Morges</p>
+    {% endif %}
   </div>
 </section> 

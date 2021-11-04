@@ -1,6 +1,7 @@
 {% set lang = 'fr' %}
 {% set inter = False %}
 {% set country = 'ch' %}
+{% set cant = None %}
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -42,14 +43,14 @@
                 <input type="radio" name="options" id="fribourg-option">
                 <span class="mx-auto">Fribourg</span>
               </label>
-              <!-- <label onclick="selectCanton('valais');" class="btn btn-light border">
+              {# <label onclick="selectCanton('valais');" class="btn btn-light border">
                 <input type="radio" name="options" id="valais-option">
                 <span class="mx-auto">Valais</span>
               </label>
               <label onclick="selectCanton('berne');" class="btn btn-light border">
                 <input type="radio" name="options" id="berne-option">
-                <span class="mx-auto">Berne</span> -->
-              </label>
+                <span class="mx-auto">Berne</span> 
+              </label> #}
             </div>
           </div>
 
@@ -60,8 +61,8 @@
               <button onclick="selectCanton('geneve');" class="dropdown-item" type="button">Genève</button>
               <button onclick="selectCanton('fribourg');" class="dropdown-item" type="button">Fribourg</button>
               <button onclick="selectCanton('neuchatel');" class="dropdown-item" type="button">Neuchâtel</button>
-              <!-- <button onclick="selectCanton('valais');" class="dropdown-item" type="button">Valais</button>
-              <button onclick="selectCanton('berne');" class="dropdown-item" type="button">Berne</button> -->
+              {# <button onclick="selectCanton('valais');" class="dropdown-item" type="button">Valais</button>
+              <button onclick="selectCanton('berne');" class="dropdown-item" type="button">Berne</button> #}
             </div>
           </div>
         </div>
@@ -118,7 +119,7 @@
             <p class="text-secondary text-center">Fribourg</p>
           </div>
         </div>
-        <!-- <div class="canton-schools valais row">
+        {# <div class="canton-schools valais row">
           <div class="col-12">
             <ul class="list-group mx-auto">
               <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Cycle d'orientation</li>
@@ -143,7 +144,7 @@
             </ul>
             <p class="text-secondary text-center">Berne</p>
           </div>
-        </div> -->
+        </div> #}
 
         <div class="row">
           <div class="col-12 text-center mx-auto" style="max-width: 500px;">

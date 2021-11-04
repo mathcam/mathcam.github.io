@@ -1,0 +1,78 @@
+{% set lang = 'fr' %}
+{% set inter = False %}
+{% set country = 'ch' %}
+{% set cant = 'fr' %}
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    {% include 'partials/head.j2' %}
+    <title>Cours de maths/physique à Fribourg, 1er gratuit sans engag</title>
+    <meta name="description" content="Enseignant suisse indépendant proposant des cours en maths, physique, OS maths-physique (de 9-11ème) et chimie dans le canton de Fribourg">
+    <link rel="canonical" href="https://mathcam.github.io/{{ page_name }}.html">
+  </head>
+  <body>
+    {% set cur_page = 'home' %}
+    {% include 'partials/header.j2' %}
+
+    {% set title = 'Cours de maths / physique dans le canton de Fribourg' %}
+    {% set subtitle = 'À domicile, dans un café, ou à distance (webcam/Zoom)' %}
+    {% include 'partials/picture.j2' %}
+
+
+    <!-- levels list -->
+    <section id="levels-list" class="">
+      <div class="container">
+        <h2 class="text-center text-uppercase mb-5 mt-3">Branches et Niveaux</h2>
+        <div class="row">
+          <div class="col-12">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Cycle d'orientation</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Collège / Gymnase</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École supérieure de commerce</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École de culture générale</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Apprentissage</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Maturité professionnelle</li>
+            </ul>
+            <p class="text-secondary text-center">Fribourg</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 text-center mx-auto" style="max-width: 500px;">
+            <h6 class="mb-4"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Physique (ou Maths-Physique)</h6>
+
+            <h6 class="mb-4"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Maths</h6>
+
+            <h6><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Chimie</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% include 'partials/places.j2' %}
+
+    <!-- about me -->
+    <section id="about-us" class="about-us bg-gray">
+      <div class="container">
+        <h2 class="text-center text-uppercase">Qui suis-je</h2>
+        <div class="row">
+          <p class="lead text-justify col-lg-9">Bonjour ! Mon nom est Authmane Terki. En tant que répétiteur indépendant, j'enseigne les maths, la physique et la chimie à des élèves du cycle d'orientation, collège/gymnase, et apprentissage. Ma spécialité est l'OS maths-physique de 9-11ème, que je maîtrise en profondeur. Grâce à mon expérience de 3 ans, j'ai pu collecté de nombreuses astuces très pratiques qui j'espère vous ferront gagner du temps.<br /><br />J'ai participé 3 fois à la finale suisse du <a href="/attestations-{{lang}}.html" class="d-inline">Championnat International des Jeux Mathématiques et Logiques</a>.<br /><br />Étant un enseignant passionné, ce serait un plaisir pour moi de vous aider.</p>
+          <figure class="figure col-lg-3 my-auto">
+            <img class="rounded figure-img d-block mx-auto" style="height: 250px; width: 250px;" src="img/me2021_cropped_compressed.jpeg" alt="Authmane Terki" loading="lazy">
+            <figcaption class="figure-caption d-block text-center">Authmane Terki</figcaption>
+          </figure>
+        </div><!-- <a href="mon-parcours" class="btn btn-primary btn-shadow btn-gradient">Mon parcours</a> -->
+      </div>
+    </section>
+
+    {% include 'partials/testimonials.j2' %}
+
+    {% include 'partials/books.j2' %}
+
+    {% include 'partials/payment_methods.j2' %}
+
+    {% include 'partials/footer.j2' %}
+    {% include 'partials/js_scripts.j2' %}
+  </body>
+</html>

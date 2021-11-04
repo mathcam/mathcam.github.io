@@ -12,17 +12,21 @@ SPP = "https://www.superprof.ch/cours-maths-physique-suisse-romande-vaud-geneve-
 
 def make_pg(page):
   template = env.get_template(f'pages/{page}.j2')
-  html = template.render(testimonials=testimonials, GPAGE=GPAGE, SPM=SPM, SPP=SPP, available=available)
-  with open(page + '.html.tmp', 'w') as file:
-    file.write(html)
+  html = template.render(testimonials=testimonials, GPAGE=GPAGE, SPM=SPM, SPP=SPP, available=available, page_name=page)
+  # with open(page + '.html.tmp', 'w') as file:
+  #   file.write(html)
   with open(page + '.html', 'w') as file:
-    file.write(html_minify(html))
+    file.write(html)
 
 make_pg('index')
 make_pg('en')
 make_pg('fr-ch')
 make_pg('en-ch')
 make_pg('fr-fr')
+make_pg('cours-de-maths-physique-a-domicile-vaud')
+make_pg('cours-de-maths-physique-a-domicile-geneve')
+make_pg('cours-de-maths-physique-a-domicile-neuchatel')
+make_pg('cours-de-maths-physique-a-domicile-fribourg')
 
 template = env.get_template('pages/attestations.j2')
 with open('attestations-fr.html', 'w') as file:

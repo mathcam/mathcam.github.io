@@ -1,29 +1,28 @@
-{% set lang = 'en' %}
+{% set lang = 'fr' %}
 {% set inter = False %}
 {% set country = 'ch' %}
-{% set cant = None %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     {% include 'partials/head.j2' %}
-    <title>Math/physics tutoring VD/GE/NE/FR, free trial lesson</title>
-    <meta name="description" content="Swiss freelance tutor offering lessons in math, physics, OS &quot;maths-physique&quot; (of 9-11th Harmos in Switzerland) and chemistry">
-    <link rel="canonical" href="https://mathcam.github.io/en-ch.html">
+    <title>Cours de maths/physique VD/GE/NE/FR, 1er gratuit sans engag</title>
+    <meta name="description" content="Enseignant suisse indépendant proposant des cours en maths, physique, OS maths-physique (de 9-11ème Harmos en Suisse romande) et chimie">
+    <link rel="canonical" href="https://mathcam.github.io/fr-ch.html">
   </head>
   <body>
     {% set cur_page = 'home' %}
     {% include 'partials/header.j2' %}
 
-    {% set title = 'Math/physics tutoring (Vaud, Geneva, Neuchâtel, Fribourg)' %}
-    {% set subtitle = 'At home, in a café, or online (webcam/Zoom)' %}
+    {% set title = 'Cours de maths / physique en Suisse romande (Vaud, Genève, Neuchâtel, Fribourg)' %}
+    {% set subtitle = 'À domicile, dans un café, ou à distance (webcam/Zoom)' %}
     {% include 'partials/picture.j2' %}
 
 
     <!-- levels list -->
     <section id="levels-list" class="">
       <div class="container">
-        <h2 class="text-center text-uppercase mb-5 mt-3">Subjects and Levels</h2>
+        <h2 class="text-center text-uppercase mb-5 mt-3">Branches et Niveaux</h2>
         <div class="row">
           <div class="mx-auto d-none d-lg-block">
             <div id="canton-selector" class="btn-group btn-group-toggle mb-2" data-toggle="buttons">
@@ -35,22 +34,22 @@
                 <input type="radio" name="options" id="geneve-option">
                 <span class="mx-auto">Genève</span>
               </label>
-              <label onclick="selectCanton('fribourg');" class="btn btn-light border">
-                <input type="radio" name="options" id="fribourg-option">
-                <span class="mx-auto">Fribourg</span>
-              </label>
               <label onclick="selectCanton('neuchatel');" class="btn btn-light border">
                 <input type="radio" name="options" id="neuchatel-option">
                 <span class="mx-auto">Neuchâtel</span>
               </label>
-              {# <label onclick="selectCanton('valais');" class="btn btn-light border">
+              <label onclick="selectCanton('fribourg');" class="btn btn-light border">
+                <input type="radio" name="options" id="fribourg-option">
+                <span class="mx-auto">Fribourg</span>
+              </label>
+              <!-- <label onclick="selectCanton('valais');" class="btn btn-light border">
                 <input type="radio" name="options" id="valais-option">
                 <span class="mx-auto">Valais</span>
               </label>
               <label onclick="selectCanton('berne');" class="btn btn-light border">
                 <input type="radio" name="options" id="berne-option">
-                <span class="mx-auto">Berne</span>
-              </label> #}
+                <span class="mx-auto">Berne</span> -->
+              </label>
             </div>
           </div>
 
@@ -61,8 +60,8 @@
               <button onclick="selectCanton('geneve');" class="dropdown-item" type="button">Genève</button>
               <button onclick="selectCanton('fribourg');" class="dropdown-item" type="button">Fribourg</button>
               <button onclick="selectCanton('neuchatel');" class="dropdown-item" type="button">Neuchâtel</button>
-              {# <button onclick="selectCanton('valais');" class="dropdown-item" type="button">Valais</button>
-              <button onclick="selectCanton('berne');" class="dropdown-item" type="button">Berne</button> #}
+              <!-- <button onclick="selectCanton('valais');" class="dropdown-item" type="button">Valais</button>
+              <button onclick="selectCanton('berne');" class="dropdown-item" type="button">Berne</button> -->
             </div>
           </div>
         </div>
@@ -93,19 +92,6 @@
             <p class="text-secondary text-center">Genève</p>
           </div>
         </div>
-        <div class="canton-schools fribourg row">
-          <div class="col-12">
-            <ul class="list-group mx-auto">
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Cycle d'orientation</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Collège / Gymnase</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École supérieure de commerce</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École de culture générale</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Apprentissage</li>
-              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Maturité professionnelle</li>
-            </ul>
-            <p class="text-secondary text-center">Fribourg</p>
-          </div>
-        </div>
         <div class="canton-schools neuchatel row">
           <div class="col-12">
             <ul class="list-group mx-auto">
@@ -119,7 +105,20 @@
             <p class="text-secondary text-center">Neuchâtel</p>
           </div>
         </div>
-        {# <div class="canton-schools valais row">
+        <div class="canton-schools fribourg row">
+          <div class="col-12">
+            <ul class="list-group mx-auto">
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Cycle d'orientation</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Collège / Gymnase</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École supérieure de commerce</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> École de culture générale</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Apprentissage</li>
+              <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Maturité professionnelle</li>
+            </ul>
+            <p class="text-secondary text-center">Fribourg</p>
+          </div>
+        </div>
+        <!-- <div class="canton-schools valais row">
           <div class="col-12">
             <ul class="list-group mx-auto">
               <li class="list-group-item"><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Cycle d'orientation</li>
@@ -144,18 +143,18 @@
             </ul>
             <p class="text-secondary text-center">Berne</p>
           </div>
-        </div> #}
+        </div> -->
 
         <div class="row">
           <div class="col-12 text-center mx-auto" style="max-width: 500px;">
-            <h6><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Physics (or "Maths-Physique")</h6>
-            <p>Mechanics, Forces, Energy, Work, Kinematics (movements), Electricity, Magnetism, Calorimetry (heat), Optics, Lenses, Waves, etc</p>
+            <h6><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Physique (ou Maths-Physique)</h6>
+            <p>Mécanique, Forces, Énergie, Travail, Cinématique (mouvements), Électricité, Magnétisme, Calorimétrie (chaleur), Optique, Lentilles, Ondes, etc</p>
 
-            <h6><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Math</h6>
-            <p>Algebra, Equations, Functions, Geometry, Trigonometry, Vectors, Combinatorics, Probabilities, Analysis, Sets, Sequences, Limits, etc</p>
+            <h6><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Maths</h6>
+            <p>Algèbre, Équations, Fonctions, Géométrie, Trigonométrie, Vecteurs, Combinatoires, Probabilités, Analyse, Ensembles, Suites, Limites, etc</p>
 
-            <h6><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Chemistry</h6>
-            <p>Atoms, Stoichiometry (chemical equations), Periodic Table, Chemical bonds, Acids and bases, Nomenclature, etc</p>
+            <h6><svg class="icon-icomoon text-success"><use xlink:href="img/symbol-defs.svg#icon-check-square"></use></svg> Chimie</h6>
+            <p>Atomes, Stœchiométrie (équations chimiques), Tableau périodique, Liaisons chimiques, Acides et bases, Nomenclature, etc</p>
           </div>
         </div>
       </div>
@@ -166,9 +165,9 @@
     <!-- about me -->
     <section id="about-us" class="about-us bg-gray">
       <div class="container">
-        <h2 class="text-center text-uppercase">About me</h2>
+        <h2 class="text-center text-uppercase">Qui suis-je</h2>
         <div class="row">
-          <p class="lead text-justify col-lg-9">Hello! I'm Authmane Terki, born in Morges, I currently live in the Lausanne region. Freelance tutor, <a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" rel="noopener nofollow" target="_blank">ex developer</a>, founder of Mathcam a Swiss company in tutoring, I offer lessons in French-speaking Switzerland in math, physics and chemistry, and especially for the OS "maths-physique" program of 9-11th Harmos that I master down to the smallest details.<br /><br />After several years of experience, I have been able to bring together many very valuable tips, techniques and resources, old exams and awesome exercises.<br /><br />The satisfaction of the many students I have supported - many of whom have passed their exams - fuels my interest in teaching, while I have been passionate about math and physics since my younger age and <a href="/attestations-{{lang}}.html" class="d-inline">qualified 3 times for the Swiss final of the International Mathematical and Logic Games Championship.</a></p>
+          <p class="lead text-justify col-lg-9">Bonjour ! Je suis Authmane Terki, né à Morges, je vis actuellement dans la région de Lausanne. Enseignant et répétiteur indépendant, <a href="https://www.linkedin.com/in/authmane-terki-full-stack-developer/" rel="noopener nofollow" target="_blank">ex développeur</a>, fondateur de Mathcam entreprise suisse dans l'enseignement, je propose des cours ou appuis en maths, physique et chimie en Suisse romande pour les élèves de fin de secondaire et de gymnase, les apprentis et les adultes en formation, et spécialement pour le programme de l'OS maths-physique de 9-11ème Harmos que je maîtrise jusqu'aux plus petits détails.<br /><br />Après plusieurs années d'expérience, j'ai pu réunir de multiples astuces, techniques et ressources très précieuses, d'anciens examens et des exercices inédits.<br /><br />La satisfaction des nombreux élèves que j'ai soutenus - dont une bonne partie qui ont réussi avec succès leur examen - alimente mon intérêt pour l'enseignement, tandis que je me passionne pour les maths et la physique depuis mon plus jeune âge et <a href="/attestations-{{lang}}.html" class="d-inline">me suis qualifié à 3 reprises à la finale suisse du Championnat International des Jeux Mathématiques et Logiques.</a></p>
           <figure class="figure col-lg-3 my-auto">
             <img class="rounded figure-img d-block mx-auto" style="height: 250px; width: 250px;" src="img/me2021_cropped_compressed.jpeg" alt="Authmane Terki" loading="lazy">
             <figcaption class="figure-caption d-block text-center">Authmane Terki</figcaption>
@@ -187,4 +186,3 @@
     {% include 'partials/js_scripts.j2' %}
   </body>
 </html>
- 
