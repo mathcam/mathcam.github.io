@@ -16,11 +16,13 @@
 <link rel="shortcut icon" href="favicon.svg">
 
 <!-- href -->
+<link rel="alternate" href="https://mathcam.github.io/{{ page_name }}.html" hreflang="fr-ch" />
+{% if cant == None %}
 <link rel="alternate" href="https://mathcam.github.io" hreflang="fr" />
 <link rel="alternate" href="https://mathcam.github.io/en.html" hreflang="en" />
-<link rel="alternate" href="https://mathcam.github.io/{{ page_name }}.html" hreflang="fr-ch" />
 <link rel="alternate" href="https://mathcam.github.io/en-ch.html" hreflang="en-ch" />
 <link rel="alternate" href="https://mathcam.github.io/fr-fr.html" hreflang="fr-fr" />
+{% endif %}
 
 
 <!-- Tweaks for older IEs--><!--[if lt IE 9]>
