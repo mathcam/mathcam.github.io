@@ -59,14 +59,14 @@ $('.navbar .navbar-toggler').on('click', function () {
 // ------------------------------------------------------- //
 // canton selector
 // ------------------------------------------------------- //
-var cantons_list = ['vaud', 'geneve', 'fribourg', 'neuchatel', 'valais', 'berne'];
-function selectCanton(canton) {
-    cantons_list.filter(function(x) { return x !== canton }).forEach(function(element) {
-        $("." + element + ".canton-schools").addClass('d-none');
-    });
-    $("." + canton + ".canton-schools").removeClass('d-none');
-}
-selectCanton('vaud');
+// var cantons_list = ['vaud', 'geneve', 'fribourg', 'neuchatel', 'valais', 'berne'];
+// function selectCanton(canton) {
+//     cantons_list.filter(function(x) { return x !== canton }).forEach(function(element) {
+//         $("." + element + ".canton-schools").addClass('d-none');
+//     });
+//     $("." + canton + ".canton-schools").removeClass('d-none');
+// }
+// selectCanton('vaud');
 
 // ------------------------------------------------------- //
 // currency selector
