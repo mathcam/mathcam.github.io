@@ -1,5 +1,0 @@
-Sitemap: https://mathcam.github.io/sitemap.xml
-User-agent: *
-Disallow: /attestations-fr.html
-Disallow: /attestations-en.html
-
