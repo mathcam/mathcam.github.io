@@ -1787,3 +1787,36 @@ a.text-dark:focus, a.text-dark:hover {
 .my-float{
   margin-top:22px;
 }*/
+
+/*
+* ==========================================================
+*     BANNER
+* ==========================================================
+*/
+/*.modal-dialog {
+  margin-top: 0rem;
+  max-width: 100%;
+  
+  .modal-content {
+    border-radius: 0rem;
+  }
+  
+  .buttons {
+    .btn {
+      margin: 0.2rem;
+    }
+  }
+}*/
+.bg-custom {
+  background-color: #F5F5F5;
+}
+.button-fixed {
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  border-radius: 4px;
+}
+p.tracking-text {
+  font-size: 0.7rem;
+  line-height: 1rem;
+}
