@@ -136,11 +136,27 @@ function eraseCookie(name) {
     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
+function startMicrosoftClarity() {
+    if (window.location.hostname === 'swissmath.ch') {
+        $('head').append('<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "9ee2g93jwr");</script>');
+    } else if (window.location.hostname === 'mathcam.github.io') {
+        $('head').append('<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "94qwyxtyyi");</script>');
+    }
+}
+
+function closeTrackingAsk() {
+    $("#tracking_ask").addClass('d-none');
+}
+
 function enableTracking() {
     setCookie('tracking', true, 30);
     $("#tracking_ask").addClass('d-none');
+    startMicrosoftClarity();
 }
 
 if (getCookie('tracking') === null) {
     $("#tracking_ask").removeClass('d-none');
 }
+else if (getCookie('tracking') === true) {
+    startMicrosoftClarity();
+} 
