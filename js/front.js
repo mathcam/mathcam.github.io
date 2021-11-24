@@ -146,6 +146,12 @@ function startMicrosoftClarity() {
 
 function closeTrackingAsk() {
     $("#tracking_ask").addClass('d-none');
+    
+    if (window.location.hostname === 'swissmath.ch') {
+        $('body').append('<script type="text/javascript">var sc_project=12681898; var sc_invisible=1; var sc_security="79078c4a";</script><script type="text/javascript"src="https://www.statcounter.com/counter/counter.js" async></script><noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12681898/0/79078c4a/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>');
+    } else if (window.location.hostname === 'mathcam.github.io') {
+        $('body').append('<script type="text/javascript">var sc_project=12681899; var sc_invisible=1; var sc_security="c1591536";</script><script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script><noscript><div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12681899/0/c1591536/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>');
+    }
 }
 
 function enableTracking() {
